@@ -3,25 +3,20 @@ using UnityEngine;
 public class Bottle : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
-    [SerializeField] private Animator _animator; // Reference to the Animator component
+    public GameObject player;
+    private Animator _animator;
 
-    // Index of the layer you want to animate
-    [SerializeField] private int _layerIndex = 2;
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     public string InteractionPrompt => _prompt;
 
     public bool Interact(Interactor interactor)
     {
-        if (_animator != null)
-        {
-            // Trigger the "PickUp" animation in the specified layer
-            _animator.Play("PickUp", _layerIndex);
-        }
-        else
-        {
-            Debug.LogWarning("Animator reference not set in Bottle script.");
-        }
-
+        Debug.Log("Interact method called on Bottle.");
+        player.GetComponent<Animator>().Play("Drinking");
         return true;
     }
 }
