@@ -3,8 +3,7 @@ using UnityEngine;
 public class CombatController : MonoBehaviour
 {
     public Animator playerAnimator;
-    public GameObject weapon; // Reference to the weapon GameObject
-    public Transform handTransform; // Reference to the hand transform where the weapon will be held
+
     public KeyCode startCombatKey = KeyCode.F; // Change this to the desired button/key
 
     private bool inCombatMode = false;
@@ -29,14 +28,11 @@ public class CombatController : MonoBehaviour
         {
             // Trigger the "DrawWeapon" animation transition
             playerAnimator.SetTrigger("DrawWeapon");
-
-            // Set the "SheathWeapon" boolean to false (if it's currently true)
-            playerAnimator.SetBool("SheathWeapon", false);
         }
         else
         {
-            // Set the "SheathWeapon" boolean to true
-            playerAnimator.SetBool("SheathWeapon", true);
+            // Trigger the "SheathWeapon" animation transition
+            playerAnimator.SetTrigger("SheathWeapon");
         }
     }
 }
