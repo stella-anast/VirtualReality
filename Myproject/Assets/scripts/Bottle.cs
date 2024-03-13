@@ -16,7 +16,8 @@ public class Bottle : MonoBehaviour, IInteractable
     public bool Interact(Interactor interactor)
     {
         Debug.Log("Interact method called on Bottle.");
-        _animator.Play("Drinking"); 
+        // Trigger the "PickUp" animation
+        _animator.SetTrigger("PickUp");
         return true;
     }
 }
