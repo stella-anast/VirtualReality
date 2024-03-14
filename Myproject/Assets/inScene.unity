@@ -1099,8 +1099,8 @@ GameObject:
   - component: {fileID: 1902198893}
   - component: {fileID: 1902198892}
   - component: {fileID: 1902198891}
-  - component: {fileID: 1902198890}
   - component: {fileID: 1902198895}
+  - component: {fileID: 1902198896}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1108,37 +1108,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!320 &1902198890
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902198889}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 3595995601009728580, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
-    value: {fileID: 1676306600}
-  - key: {fileID: 5765276419905716282, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
-    value: {fileID: 410194375}
-  - key: {fileID: 6400611108000318555, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
-    value: {fileID: 938951613}
-  - key: {fileID: -1882975922859443257, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
-    value: {fileID: 1143471627}
-  - key: {fileID: -3072488102912798391, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
-    value: {fileID: 443555111}
-  - key: {fileID: -6670233795460303544, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: -852926452126543057, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
-    value: {fileID: 651256301}
-  m_ExposedReferences:
-    m_References: []
 --- !u!114 &1902198891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,6 +1209,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
+--- !u!320 &1902198896
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902198889}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 3174473278243107727, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
+    value: {fileID: 1676306600}
+  - key: {fileID: -6071916036679199687, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
+    value: {fileID: 410194375}
+  - key: {fileID: 2032056455200377982, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
+    value: {fileID: 938951613}
+  - key: {fileID: -1430269157096543100, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
+    value: {fileID: 1143471627}
+  - key: {fileID: 8934244878589880798, guid: 46de57ad5813ac249addd71dc362a14d, type: 2}
+    value: {fileID: 651256301}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
