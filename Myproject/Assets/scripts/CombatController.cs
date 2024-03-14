@@ -5,10 +5,16 @@ public class CombatController : MonoBehaviour
     public Animator playerAnimator;
 
     public KeyCode startCombatKey = KeyCode.F; // Change this to the desired button/key
+    public KeyCode attackKey = KeyCode.Mouse0; // Change this to the desired attack button/key
 
     private bool inCombatMode = false;
     private bool weaponDrawn = false;
-
+    void Start()
+    {
+        // Ensure cursor is unlocked and visible when the game starts
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     void Update()
     {
         // Check if the designated button is pressed
@@ -17,8 +23,11 @@ public class CombatController : MonoBehaviour
             // Toggle combat mode
             ToggleCombatMode();
         }
-        if (Input.GetMouseButtonDown(0) && weaponDrawn)
+
+        // Check if the attack button is pressed and weapon is drawn
+        if (Input.GetKeyDown(attackKey) && weaponDrawn)
         {
+            // Trigger the attack animation directly
             playerAnimator.SetTrigger("Attack");
         }
     }
@@ -40,6 +49,7 @@ public class CombatController : MonoBehaviour
             playerAnimator.SetTrigger("SheathWeapon");
         }
     }
+
     public void OnDrawWeapon()
     {
         // Set weaponDrawn to true when the weapon is drawn
