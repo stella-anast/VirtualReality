@@ -7,6 +7,7 @@ public class CombatController : MonoBehaviour
     public KeyCode startCombatKey = KeyCode.F; // Change this to the desired button/key
 
     private bool inCombatMode = false;
+    private bool weaponDrawn = false;
 
     void Update()
     {
@@ -15,6 +16,10 @@ public class CombatController : MonoBehaviour
         {
             // Toggle combat mode
             ToggleCombatMode();
+        }
+        if (Input.GetMouseButtonDown(0) && weaponDrawn)
+        {
+            playerAnimator.SetTrigger("Attack");
         }
     }
 
@@ -34,5 +39,10 @@ public class CombatController : MonoBehaviour
             // Trigger the "SheathWeapon" animation transition
             playerAnimator.SetTrigger("SheathWeapon");
         }
+    }
+    public void OnDrawWeapon()
+    {
+        // Set weaponDrawn to true when the weapon is drawn
+        weaponDrawn = true;
     }
 }
