@@ -20,19 +20,21 @@ public class Interactor : MonoBehaviour
 
         if (_numFound > 0)
         {
+            Debug.Log("inside num > 0");
             _interactable = _colliders[0].GetComponent<IInteractable>();
             if (_interactable != null)
             {
+                Debug.Log("inside interactable not null");
                 if (!_interactionPromptUI.IsDisplayed)
                     _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
                 if (Keyboard.current.rKey.wasPressedThisFrame)
                     _interactable.Interact(this);
-                /*if (Keyboard.current.lKey.wasPressedThisFrame)
+                if (Keyboard.current.lKey.wasPressedThisFrame)
                 {
                     Debug.Log("we are in");
                     _interactable.Interact(this);
                 }
-                */
+                
             }
          
         }

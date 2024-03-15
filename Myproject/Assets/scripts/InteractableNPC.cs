@@ -10,6 +10,8 @@ public class InteractableNPC : MonoBehaviour, IInteractable
     public GameObject player;
 
     public string InteractionPrompt => _prompt;
+    public bool isTalkingWithPlayer;
+
 
     NPC npc;
 
@@ -19,8 +21,9 @@ public class InteractableNPC : MonoBehaviour, IInteractable
     }
     public bool Interact(Interactor interactor)
     {
-        npc.StartConversation();
+        isTalkingWithPlayer = true;
 
+        Debug.Log("conv started");
         return true;
     }
 
