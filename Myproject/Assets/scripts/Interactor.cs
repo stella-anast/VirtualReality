@@ -12,6 +12,8 @@ public class Interactor : MonoBehaviour
     [SerializeField] private int _numFound;
     private IInteractable _interactable;
 
+    NPC npc;
+
     private void Update()
     {
         _numFound = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionPointRadius, _colliders, _interactableMask);
@@ -25,8 +27,14 @@ public class Interactor : MonoBehaviour
                     _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
                 if (Keyboard.current.rKey.wasPressedThisFrame)
                     _interactable.Interact(this);
+                /*if (Keyboard.current.lKey.wasPressedThisFrame)
+                {
+                    Debug.Log("we are in");
+                    _interactable.Interact(this);
+                }
+                */
             }
-
+         
         }
         else
         {
