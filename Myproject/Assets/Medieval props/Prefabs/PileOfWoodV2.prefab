@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3349738}
   - component: {fileID: 2372878}
   - component: {fileID: 6443776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PileOfWoodV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

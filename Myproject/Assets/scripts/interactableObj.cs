@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class Bottle : MonoBehaviour, IInteractable
+public class interactableObj : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
     public GameObject player;
     private Animator _animator;
+
+    public string ItemName;
 
     private void Start()
     {
@@ -15,7 +18,26 @@ public class Bottle : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        Destroy(gameObject);
+        if (!InventorySystem.Instance.CheckIfFull())
+        {
+            InventorySystem.Instance.AddToInventory(ItemName);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("The inventory is full");
+        }
+
         return true;
     }
+
+    /*void Update()
+    {
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
+            InventorySystem.Instance.AddToInventory(ItemName);
+            Destroy(gameObject);
+        }
+    }*/
+
 }
