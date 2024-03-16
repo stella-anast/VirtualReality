@@ -126,6 +126,8 @@ public class QuestManager : MonoBehaviour
             var req1Amount = trackedQuest.info.firstRequirementAmount;
             var req2 = trackedQuest.info.secondRequirementItem;
             var req2Amount = trackedQuest.info.secondRequirementAmount;
+            var req3 = trackedQuest.info.thirdRequirementItem;
+            var req3Amount = trackedQuest.info.thirdRequirementAmount;
 
 
             if (trackedQuest.info.secondRequirementItem != "") // if we have 2 requirements
@@ -133,7 +135,13 @@ public class QuestManager : MonoBehaviour
                 tRow.requirements.text = $"{req1} " + InventorySystem.Instance.CheckItemAmount(req1) + "/" + $" {req1Amount}\n" +
                $"{req2} " + InventorySystem.Instance.CheckItemAmount(req2) + "/" + $" {req2Amount}\n";
             }
-            else // if we have only one
+            else if (trackedQuest.info.thirdRequirementItem != "") // if we have 3 requirements
+            {
+                tRow.requirements.text = $"{req1} " + InventorySystem.Instance.CheckItemAmount(req1) + "/" + $" {req1Amount}\n" +
+                $"{req2} " + InventorySystem.Instance.CheckItemAmount(req2) + "/" + $" {req2Amount}\n" +
+                $"{req3} " + InventorySystem.Instance.CheckItemAmount(req3) + "/" + $" {req3Amount}\n";
+            }
+            else // if we only have one
             {
                 tRow.requirements.text = $"{req1} " + InventorySystem.Instance.CheckItemAmount(req1) + "/" + $" {req1Amount}\n";
             }

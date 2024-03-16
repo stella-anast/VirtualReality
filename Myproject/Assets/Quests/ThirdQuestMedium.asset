@@ -24,11 +24,14 @@ MonoBehaviour:
   comebackAfterDecline: Did you change your mind?
   comebackInProgress: These are not enough. I will need more.
   comebackCompleted: These are great! Thank you!
-  finalWords: Great job!
+  finalWords: In The woods there is a cabin. There you will find Steve, an old man
+    who lives there. He can help you find the key.
   coinReward: 45
   rewardItem1: Rock
   rewardItem2: Coins
-  firstRequirementItem: Wooden Stick
+  firstRequirementItem: Wood Stick
   firstRequirementAmount: 5
   secondRequirementItem: Wood
   secondRequirementAmount: 2
+  thirdRequirementItem: 
+  thirdRequirementAmount: 0

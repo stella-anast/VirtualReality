@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fa6652f9eaf497ca1a2df8c28307de, type: 3}
+  m_Name: FifthQuestMedium
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - 1st dialog
+  - 2nd dialog
+  - 3rd dialog
+  - 4th dialog
+  acceptOption: I have what you need.
+  acceptAnswer: Great! I want 2 knives and some money.
+  declineOption: Never mind. I don't need your help.
+  declineAnswer: Very well. You will soon regret this.
+  comebackAfterDecline: I knew you'd come back.
+  comebackInProgress: These are not enough.
+  comebackCompleted: 'Great! '
+  finalWords: The next thing I am going to ask is not as easy...
+  coinReward: 0
+  rewardItem1: 
+  rewardItem2: 
+  firstRequirementItem: Coins
+  firstRequirementAmount: 2
+  secondRequirementItem: Knife
+  secondRequirementAmount: 2
+  thirdRequirementItem: 
+  thirdRequirementAmount: 0
