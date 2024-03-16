@@ -19,6 +19,13 @@ public class QuestManager : MonoBehaviour
 
     public GameObject questMenucontent;
 
+    [Header("QuestTracker")]
+    public GameObject questTrackerContent;
+    public GameObject trackerRowPrefab;
+
+    public List<Quest> allTrackedQuests;
+
+
     private void Start()
     {
         questMenu.SetActive(false);
@@ -35,6 +42,18 @@ public class QuestManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    public void TrackQuest(Quest quest)
+    {
+        allTrackedQuests.Add(quest);
+        RefreshTrackerList();
+    }
+
+    public void UnTrackQuest(Quest quest)
+    {
+        allTrackedQuests.Remove(quest);
+        RefreshTrackerList();
     }
 
     public void AddActiveQuest(Quest quest)
@@ -82,6 +101,40 @@ public class QuestManager : MonoBehaviour
             qRow.isActive = false;
         }
     }
+
+    public void RefreshTrackerList()
+    {
+        // Destroying the previous list
+        foreach (Transform child in questTrackerContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        foreach (Quest trackedQuest in allTrackedQuests)
+        {
+            GameObject trackerPrefab = Instantiate(trackerRowPrefab, Vector3.zero, Quaternion.identity);
+            trackerPrefab.transform.SetParent(questTrackerContent.transform, false);
+
+            TrackerRow tRow = trackerPrefab.GetComponent<TrackerRow>();
+
+            tRow.questName.text = trackedQuest.questName;
+            tRow.description.text = trackedQuest.questDescription;
+
+            if (trackedQuest.info.secondRequirmentItem != "") // if we have 2 requirements
+            {
+                tRow.requirements.text = $"{trackedQuest.info.firstRequirmentItem}" + "0/" + $"{trackedQuest.info.firstRequirementAmount}\n" +
+               $"{trackedQuest.info.secondRequirmentItem}" + "0/" + $"{trackedQuest.info.secondRequirementAmount}\n";
+            }
+            else // if we have only one
+            {
+                tRow.requirements.text = $"{trackedQuest.info.firstRequirmentItem}" + "0/" + $"{trackedQuest.info.firstRequirementAmount}\n";
+            }
+
+
+        }
+
+    }
+
     void Update()
     {
 
