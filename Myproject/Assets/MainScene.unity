@@ -9245,7 +9245,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1932934973}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.9999704
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -28172,13 +28172,13 @@ MonoBehaviour:
   quests:
   - questName: I need a way to warm up my house
     questGiver: Melina
-    questDescription: Collect 4 piles of wood and deliver them to Melina
+    questDescription: Collect 6 piles of wood and deliver them to Melina
     accepted: 0
     declined: 0
     initialDialogCompleted: 0
     isCompleted: 0
     hasNoRequirements: 0
-    info: {fileID: 11400000, guid: 8618c523e14904717af9420435ab41d3, type: 2}
+    info: {fileID: 11400000, guid: 965fa0dc7077f464d99a77cecfb2dabb, type: 2}
   - questName: Crafting materials
     questGiver: Melina
     questDescription: I need materials so I can craft some things for my house
@@ -28187,7 +28187,17 @@ MonoBehaviour:
     initialDialogCompleted: 0
     isCompleted: 0
     hasNoRequirements: 0
-    info: {fileID: 11400000, guid: c605ab5922355438a876099b8302327d, type: 2}
+    info: {fileID: 11400000, guid: 8c6d6a894840b46d198c1c6f01583ba5, type: 2}
+  - questName: Collect Wood
+    questGiver: Melina
+    questDescription: I need materials to sell to my friend. Please help me I need
+      the money
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: ddcb79a1c96c243a394a9010832bead1, type: 2}
   currentActiveQuest:
     questName: 
     questGiver: 
@@ -31363,7 +31373,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1033765754}
   m_HandleRect: {fileID: 1033765753}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
