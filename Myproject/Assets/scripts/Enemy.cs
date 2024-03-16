@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 
 
     [Header("Combat")]
-    [SerializeField] float attackCD = 0f;
+    [SerializeField] float attackCD = 2f;
     [SerializeField] float attackRange = 1f;
     [SerializeField] float aggroRange = 2f;
 
@@ -63,6 +63,14 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+    public void StartDealDamage()
+    {
+        GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
+    }
+    public void EndDealDamage()
+    {
+        GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
 
     void Die()
