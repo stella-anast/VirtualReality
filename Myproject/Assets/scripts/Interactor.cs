@@ -31,7 +31,6 @@ public class Interactor : MonoBehaviour
                     _interactable.Interact(this);
                 if (Keyboard.current.lKey.wasPressedThisFrame)
                 {
-                    Debug.Log("we are in");
                     _interactable.Interact(this);
                 }
                 

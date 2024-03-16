@@ -37,12 +37,18 @@ public class DialogSystem : MonoBehaviour
     {
         dialogUI.gameObject.SetActive(true);
         dialogUIActive = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void CloseDialogUI()
     {
         dialogUI.gameObject.SetActive(false);
         dialogUIActive = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
 }

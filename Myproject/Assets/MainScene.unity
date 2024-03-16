@@ -9088,7 +9088,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
     m_HighlightedColor: {r: 0.6698113, g: 0.25856307, b: 0.06634923, a: 1}
     m_PressedColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -15295,6 +15295,19 @@ MonoBehaviour:
   weaponHolder: {fileID: 337507595}
   weapon: {fileID: 1268818257085314963, guid: 30c4ab097e25ee143beb073b053faee4, type: 3}
   weaponSheath: {fileID: 1805018514}
+--- !u!114 &813480750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813480715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a1a1b0dace249ee95516cc9d67a505, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBody: {fileID: 813480715}
 --- !u!1001 &813603280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24544,6 +24557,23 @@ MonoBehaviour:
   player: {fileID: 813480715}
   isTalkingWithPlayer: 0
   playerInRange: 0
+  quests:
+  - accepted: 0
+    declined: 0
+    initalDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 8618c523e14904717af9420435ab41d3, type: 2}
+  currentActiveQuest:
+    accepted: 0
+    declined: 0
+    initalDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 0}
+  activeQuestIndex: 0
+  firstTimeInteraction: 1
+  currentDialog: 0
 --- !u!1001 &1307492076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32070,6 +32100,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 813480744}
+    - targetCorrespondingSourceObject: {fileID: 974238578668270704, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 813480750}
   m_SourcePrefab: {fileID: 100100000, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
 --- !u!1001 &1688226468
 PrefabInstance:
@@ -36776,7 +36809,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
     m_HighlightedColor: {r: 0.6698113, g: 0.25856307, b: 0.06634923, a: 1}
     m_PressedColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
