@@ -5,6 +5,10 @@ using System.Collections.Generic;
 [System.Serializable]
 public class Quest
 {
+    [Header("strings")]
+    public string questName;
+    public string questGiver;
+
     [Header("Bools")]
     public bool accepted;
     public bool declined;

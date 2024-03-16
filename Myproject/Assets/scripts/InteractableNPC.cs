@@ -171,6 +171,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
 
     private void AcceptedQuest()
     {
+        QuestManager.Instance.AddActiveQuest(currentActiveQuest);
         currentActiveQuest.accepted = true;
         currentActiveQuest.declined = false;
 
