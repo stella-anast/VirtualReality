@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fa6652f9eaf497ca1a2df8c28307de, type: 3}
+  m_Name: FourthQuestHard
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - 1st dialog
+  - 2nd dialog
+  - 3rd dialog
+  acceptOption: I'll find the items you need.
+  acceptAnswer: Great! I want rocks, wooden sticks and some money of course!
+  declineOption: I don't think so.
+  declineAnswer: You are making a mistake! I am certain you will change your mind.
+  comebackAfterDecline: Ha! I knew it. Are you ready for your quest?
+  comebackInProgress: Keep going! I need more.
+  comebackCompleted: Nice! You found everything.
+  finalWords: In the bridge there is a guard. Give him these items and he can give
+    you the key. Be careful the items are not the only thing he will ask from you.
+    There is always a greater price to pay...
+  coinReward: 0
+  rewardItem1: Knife
+  rewardItem2: Knife
+  firstRequirementItem: Rock
+  firstRequirementAmount: 2
+  secondRequirementItem: Wooden Stick
+  secondRequirementAmount: 4
+  thirdRequirementItem: Coins
+  thirdRequirementAmount: 2
