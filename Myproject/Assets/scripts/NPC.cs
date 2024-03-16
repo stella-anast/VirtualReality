@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,4 +32,4 @@ public class NPC : MonoBehaviour
         Debug.Log("conv started");
     }
 
-}
+}*/

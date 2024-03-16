@@ -12,7 +12,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private int _numFound;
     private IInteractable _interactable;
 
-    NPC npc;
+    //NPC npc;
 
     private void Update()
     {

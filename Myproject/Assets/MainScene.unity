@@ -9038,7 +9038,7 @@ GameObject:
   - component: {fileID: 499134662}
   - component: {fileID: 499134661}
   m_Layer: 0
-  m_Name: Decline Button
+  m_Name: Option2 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9087,7 +9087,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
     m_HighlightedColor: {r: 0.6698113, g: 0.25856307, b: 0.06634923, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -24543,6 +24543,7 @@ MonoBehaviour:
   _prompt: Press L to speak
   player: {fileID: 813480715}
   isTalkingWithPlayer: 0
+  playerInRange: 0
 --- !u!1001 &1307492076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36725,7 +36726,7 @@ GameObject:
   - component: {fileID: 1872901590}
   - component: {fileID: 1872901589}
   m_Layer: 0
-  m_Name: Accept Button
+  m_Name: Option1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36774,7 +36775,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
     m_HighlightedColor: {r: 0.6698113, g: 0.25856307, b: 0.06634923, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.7764706, g: 0.41568628, b: 0.24705882, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -41046,6 +41047,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2328edd22a82495685b4d8a30ccfab4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogText: {fileID: 720294094}
+  option1Button: {fileID: 1872901589}
+  option2Button: {fileID: 499134661}
+  dialogUI: {fileID: 870409124}
+  dialogUIActive: 0
 --- !u!4 &2122214548
 Transform:
   m_ObjectHideFlags: 0
