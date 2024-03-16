@@ -1127,7 +1127,7 @@ Transform:
   m_GameObject: {fileID: 63437107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 656, y: 42, z: -235.3}
+  m_LocalPosition: {x: 656, y: 42.1, z: -235.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8204,7 +8204,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1932934974}
   m_HandleRect: {fileID: 1932934973}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -25544,8 +25544,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53d6514ee8d98448988f625ee2ec2733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInRange: 0
-  isTalkingWithPlayer: 0
 --- !u!114 &1302327145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25565,6 +25563,7 @@ MonoBehaviour:
   quests:
   - questName: test
     questGiver: Melina
+    questDescription: 
     accepted: 0
     declined: 0
     initialDialogCompleted: 0
@@ -25573,6 +25572,7 @@ MonoBehaviour:
     info: {fileID: 11400000, guid: 8618c523e14904717af9420435ab41d3, type: 2}
   - questName: test1
     questGiver: Melina
+    questDescription: 
     accepted: 0
     declined: 0
     initialDialogCompleted: 0
@@ -25582,6 +25582,7 @@ MonoBehaviour:
   currentActiveQuest:
     questName: 
     questGiver: 
+    questDescription: 
     accepted: 0
     declined: 0
     initialDialogCompleted: 0
@@ -27751,8 +27752,8 @@ Transform:
   m_GameObject: {fileID: 1451563912}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 735.28687, y: 15.175514, z: 23.657766}
-  m_LocalScale: {x: 0.20936412, y: 0.23, z: 0.20936413}
+  m_LocalPosition: {x: 735.28687, y: 16, z: 33.6}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1649874742}
@@ -28200,7 +28201,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1033765754}
   m_HandleRect: {fileID: 1033765753}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -29145,7 +29146,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 690.7312, y: 398.18097}
+  m_AnchoredPosition: {x: 694.3, y: 472.9}
   m_SizeDelta: {x: 276.5376, y: 389.6381}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504934173
@@ -29185,7 +29186,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504934171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -29969,8 +29970,8 @@ Transform:
   m_GameObject: {fileID: 1532249814}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 640.2, y: 15.175514, z: 25.6}
-  m_LocalScale: {x: 0.215, y: 0.235, z: 0.21}
+  m_LocalPosition: {x: 640.2, y: 15.175514, z: 31.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 547900873}
@@ -33079,7 +33080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030644824, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.999962
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030644824, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -33091,11 +33092,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030644824, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.008726465
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030644824, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3203261902030644824, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3203261902030645159, guid: c708a3b79cd542b42bbfedb17e213bc1, type: 3}
       propertyPath: m_IsActive
@@ -39948,7 +39953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0000490645}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1932934972
@@ -41300,6 +41305,7 @@ MonoBehaviour:
   questMenucontent: {fileID: 1850485391}
   questTrackerContent: {fileID: 1932410997}
   trackerRowPrefab: {fileID: 3529040492584034935, guid: 3956c350892444f6f86138c78d8118c1, type: 3}
+  allTrackedQuests: []
 --- !u!4 &2025967420
 Transform:
   m_ObjectHideFlags: 0

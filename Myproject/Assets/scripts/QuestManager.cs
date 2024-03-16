@@ -59,6 +59,7 @@ public class QuestManager : MonoBehaviour
     public void AddActiveQuest(Quest quest)
     {
         allActiveQuests.Add(quest);
+        TrackQuest(quest);
         RefreshQuestList();
     }
 
@@ -66,6 +67,7 @@ public class QuestManager : MonoBehaviour
     {
         allActiveQuests.Remove(quest);
         allCompletedQuests.Add(quest);
+        UnTrackQuest(quest);
 
         RefreshQuestList();
 
@@ -120,14 +122,20 @@ public class QuestManager : MonoBehaviour
             tRow.questName.text = trackedQuest.questName;
             tRow.description.text = trackedQuest.questDescription;
 
-            if (trackedQuest.info.secondRequirmentItem != "") // if we have 2 requirements
+            var req1 = trackedQuest.info.firstRequirementItem;
+            var req1Amount = trackedQuest.info.firstRequirementAmount;
+            var req2 = trackedQuest.info.secondRequirementItem;
+            var req2Amount = trackedQuest.info.secondRequirementAmount;
+
+
+            if (trackedQuest.info.secondRequirementItem != "") // if we have 2 requirements
             {
-                tRow.requirements.text = $"{trackedQuest.info.firstRequirmentItem}" + "0/" + $"{trackedQuest.info.firstRequirementAmount}\n" +
-               $"{trackedQuest.info.secondRequirmentItem}" + "0/" + $"{trackedQuest.info.secondRequirementAmount}\n";
+                tRow.requirements.text = $"{req1} " + InventorySystem.Instance.CheckItemAmount(req1) + "/" + $" {req1Amount}\n" +
+               $"{req2} " + InventorySystem.Instance.CheckItemAmount(req2) + "/" + $" {req2Amount}\n";
             }
             else // if we have only one
             {
-                tRow.requirements.text = $"{trackedQuest.info.firstRequirmentItem}" + "0/" + $"{trackedQuest.info.firstRequirementAmount}\n";
+                tRow.requirements.text = $"{req1} " + InventorySystem.Instance.CheckItemAmount(req1) + "/" + $" {req1Amount}\n";
             }
 
 

@@ -83,6 +83,8 @@ public class InventorySystem : MonoBehaviour
 
         itemList.Add(itemName);
 
+        QuestManager.Instance.RefreshTrackerList();
+
     }
     private GameObject FindNextEmptySlot()
 
@@ -117,5 +119,39 @@ public class InventorySystem : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public int CheckItemAmount(string name)
+    {
+        int itemCounter = 0;
+
+        foreach (string item in itemList)
+        {
+            if (item == name)
+            {
+                itemCounter++;
+            }
+        }
+        return itemCounter;
+    }
+
+    public void RemoveItem(string nameToRemove, int amountToRemove)
+    {
+        int counter = amountToRemove;
+
+        for (var i = slotList.Count - 1; i >= 0; i--)
+        {
+            if (slotList[i].transform.childCount > 0)
+            {
+                if (slotList[i].transform.GetChild(0).name == nameToRemove + "(Clone)" && counter != 0)
+                {
+                    DestroyImmediate(slotList[i].transform.GetChild(0).gameObject);
+                    counter -= 1;
+                }
+            }
+        }
+
+        QuestManager.Instance.RefreshTrackerList();
+
     }
 }

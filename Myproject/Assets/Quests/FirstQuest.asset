@@ -31,9 +31,9 @@ MonoBehaviour:
   comebackCompleted: Didnt think you could do it
   finalWords: Good job, I guess...
   coinReward: 50
-  rewardItem1: Stone
+  rewardItem1: Wood
   rewardItem2: Wood
-  firstRequirmentItem: Wooden stick
-  firstRequirementAmount: 5
-  secondRequirmentItem: Wood
-  secondRequirementAmount: 3
+  firstRequirementItem: Wood
+  firstRequirementAmount: 2
+  secondRequirementItem: 
+  secondRequirementAmount: 0

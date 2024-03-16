@@ -208,23 +208,23 @@ public class InteractableNPC : MonoBehaviour, IInteractable
 
     private void SubmitRequiredItems()
     {
-        string firstRequiredItem = currentActiveQuest.info.firstRequirmentItem;
+        string firstRequiredItem = currentActiveQuest.info.firstRequirementItem;
         int firstRequiredAmount = currentActiveQuest.info.firstRequirementAmount;
 
-       /* if (firstRequiredItem != "")
+        if (firstRequiredItem != "")
         {
             InventorySystem.Instance.RemoveItem(firstRequiredItem, firstRequiredAmount);
         }
 
 
-        string secondtRequiredItem = currentActiveQuest.info.secondRequirmentItem;
+        string secondtRequiredItem = currentActiveQuest.info.secondRequirementItem;
         int secondRequiredAmount = currentActiveQuest.info.secondRequirementAmount;
 
         if (firstRequiredItem != "")
         {
             InventorySystem.Instance.RemoveItem(secondtRequiredItem, secondRequiredAmount);
         }
-       */
+       
     }
 
     private bool AreQuestRequirmentsCompleted()
@@ -233,7 +233,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
 
         // First Item Requirment
 
-        string firstRequiredItem = currentActiveQuest.info.firstRequirmentItem;
+        string firstRequiredItem = currentActiveQuest.info.firstRequirementItem;
         int firstRequiredAmount = currentActiveQuest.info.firstRequirementAmount;
 
         var firstItemCounter = 0;
@@ -248,7 +248,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
 
         // Second Item Requirment -- If we dont have a second item, just set it to 0
 
-        string secondRequiredItem = currentActiveQuest.info.secondRequirmentItem;
+        string secondRequiredItem = currentActiveQuest.info.secondRequirementItem;
         int secondRequiredAmount = currentActiveQuest.info.secondRequirementAmount;
 
         var secondItemCounter = 0;
