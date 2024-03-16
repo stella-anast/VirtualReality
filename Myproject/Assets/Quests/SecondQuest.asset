@@ -12,15 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52fa6652f9eaf497ca1a2df8c28307de, type: 3}
   m_Name: SecondQuest
   m_EditorClassIdentifier: 
-  initialDialog: []
-  acceptOption: 
-  acceptAnswer: 
-  declineOption: 
-  declineAnswer: 
-  comebackAfterDecline: 
-  comebackInProgress: 
-  comebackCompleted: 
-  finalWords: 
+  initialDialog:
+  - wd
+  - dwd
+  - w
+  acceptOption: wd
+  acceptAnswer: wd
+  declineOption: wd
+  declineAnswer: wdw
+  comebackAfterDecline: d
+  comebackInProgress: dsds
+  comebackCompleted: sd
+  finalWords: sds
   coinReward: 0
   rewardItem1: 
   rewardItem2: 
