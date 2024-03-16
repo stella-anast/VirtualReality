@@ -23,7 +23,8 @@ MonoBehaviour:
   declineAnswer: It's okay. You can come back later.
   comebackAfterDecline: Have you decided?
   comebackInProgress: These are not enough.
-  comebackCompleted: Great!
+  comebackCompleted: Great! In the woods you will find an old cabin. If you look
+    carefully you will find the key.
   finalWords: In the woods you will find an old cabin. If you look carefully you
     will find the key.
   coinReward: 0
