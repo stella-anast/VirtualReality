@@ -12,7 +12,6 @@ public class Interactor : MonoBehaviour
     [SerializeField] private int _numFound;
     private IInteractable _interactable;
 
-    //NPC npc;
 
     private void Update()
     {
@@ -20,7 +19,6 @@ public class Interactor : MonoBehaviour
 
         if (_numFound > 0)
         {
-            Debug.Log("inside num > 0");
             _interactable = _colliders[0].GetComponent<IInteractable>();
             if (_interactable != null)
             {

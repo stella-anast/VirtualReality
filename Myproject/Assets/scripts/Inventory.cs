@@ -104,6 +104,7 @@ public class InventorySystem : MonoBehaviour
         QuestManager.Instance.RefreshTrackerList();
 
     }
+
     private GameObject FindNextEmptySlot()
 
     {
@@ -167,8 +168,7 @@ public class InventorySystem : MonoBehaviour
                     counter -= 1;
                     itemList.Remove(nameToRemove);
 
-                    // Call DropItemIntoTheWorld after removing the item
-                    DropItemIntoTheWorld(Resources.Load<GameObject>(nameToRemove));
+                    
                 }
             }
         }
@@ -181,10 +181,11 @@ public class InventorySystem : MonoBehaviour
     {
         if (slot.transform.childCount > 0)
         {
+            AlertDialog alertDialog = FindAnyObjectByType<AlertDialog>();
+
             // Get the name of the item in the slot
             string itemName = slot.transform.GetChild(0).name.Replace("(Clone)", string.Empty);
 
-            AlertDialog alertDialog = FindAnyObjectByType<AlertDialog>();
 
             // Show alert dialog
             alertDialog.ShowDialog("Are you sure you want to remove this item?", (response) =>
@@ -192,6 +193,9 @@ public class InventorySystem : MonoBehaviour
                 if (response)
                 {
                     RemoveItem(itemName, 1);
+
+                    // Call DropItemIntoTheWorld after removing the item
+                    DropItemIntoTheWorld(Resources.Load<GameObject>(itemName));
                 }
             });
         }

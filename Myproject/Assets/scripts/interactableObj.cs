@@ -5,16 +5,11 @@ public class interactableObj : MonoBehaviour, IInteractable
 {
     [SerializeField] private string _prompt;
     public GameObject player;
-    private Animator _animator;
 
     public string ItemName;
 
-    private void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
-
     public string InteractionPrompt => _prompt;
+
 
     public bool Interact(Interactor interactor)
     {
@@ -30,14 +25,5 @@ public class interactableObj : MonoBehaviour, IInteractable
 
         return true;
     }
-
-    /*void Update()
-    {
-        if (Keyboard.current.rKey.wasPressedThisFrame)
-        {
-            InventorySystem.Instance.AddToInventory(ItemName);
-            Destroy(gameObject);
-        }
-    }*/
 
 }
