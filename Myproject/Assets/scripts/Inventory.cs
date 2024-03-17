@@ -169,13 +169,16 @@ public class InventorySystem : MonoBehaviour
                     DestroyImmediate(slotList[i].transform.GetChild(0).gameObject);
                     counter -= 1;
                     itemList.Remove(nameToRemove);
+
+                    // Call DropItemIntoTheWorld after removing the item
+                    DropItemIntoTheWorld(Resources.Load<GameObject>(nameToRemove));
                 }
             }
         }
 
         QuestManager.Instance.RefreshTrackerList();
-
     }
+
 
     private void OnSlotClicked(GameObject slot)
     {
@@ -197,5 +200,17 @@ public class InventorySystem : MonoBehaviour
                 }
             });
         }
+    }
+
+    private void DropItemIntoTheWorld(GameObject tempItemReference)
+    {
+        //Get clean name
+        string cleanName = tempItemReference.name.Split(new string[] { "(Clone)" }, StringSplitOptions.None)[0];
+
+        GameObject item = Instantiate(Resources.Load<GameObject>(cleanName + "_Model"));
+
+        item.transform.position = Vector3.zero;
+        var dropSpawnPosition = PlayerState.Instance.playerBody.transform.Find("DropPoint").transform.position;
+        item.transform.localPosition = new Vector3(dropSpawnPosition.x, dropSpawnPosition.y, dropSpawnPosition.z);
     }
 }

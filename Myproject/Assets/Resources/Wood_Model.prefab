@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7464524262664329202}
   - component: {fileID: 611760954225175943}
   m_Layer: 6
-  m_Name: PileOfWood_Model
+  m_Name: Wood_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
