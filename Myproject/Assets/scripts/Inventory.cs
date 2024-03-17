@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -20,6 +22,9 @@ public class InventorySystem : MonoBehaviour
 
     private GameObject whatSlotToEquip;
     private GameObject itemToAdd;
+
+    //public GameObject alertDialog; // Reference to the AlertDialog object
+
 
     public bool isOpen;
     //public bool isFull;
@@ -44,6 +49,19 @@ public class InventorySystem : MonoBehaviour
         inventoryScreenUI.SetActive(false);
 
         PopulateSlotList();
+
+        // Add event triggers to each slot to detect clicks
+        foreach (GameObject slot in slotList)
+        {
+            EventTrigger trigger = slot.GetComponent<EventTrigger>();
+            if (trigger == null)
+                trigger = slot.AddComponent<EventTrigger>();
+
+            EventTrigger.Entry entry = new EventTrigger.Entry { eventID = EventTriggerType.PointerClick };
+            entry.callback.AddListener((data) => { OnSlotClicked(slot);
+            });
+            trigger.triggers.Add(entry);
+        }
     }
 
     private void PopulateSlotList()
@@ -71,10 +89,6 @@ public class InventorySystem : MonoBehaviour
         {
             inventoryScreenUI.SetActive(false);
             isOpen = false;
-        }
-        else if (Input.GetMouseButtonDown(0) && isOpen) // 0 represents the left mouse button
-        {
-            DropItem();
         }
     }
 
@@ -163,42 +177,25 @@ public class InventorySystem : MonoBehaviour
 
     }
 
-    public void DropItem()
+    private void OnSlotClicked(GameObject slot)
     {
-        var tempItemReference = gameObject;
-
-        tempItemReference.SetActive(false);
-
-        AlertDialog dialog = FindAnyObjectByType<AlertDialog>();
-        dialog.ShowDialog("Do you want to remove this item?", (response)=>
+        // Check if the clicked slot contains an item
+        if (slot.transform.childCount > 0)
         {
-            if (response)
+            // Get the name of the item in the slot
+            string itemName = slot.transform.GetChild(0).name.Replace("(Clone)", string.Empty);
+
+            AlertDialog alertDialog = FindAnyObjectByType<AlertDialog>();
+
+            // Show alert dialog
+            alertDialog.ShowDialog("Are you sure you want to remove this item?", (response) =>
             {
-                //DropItemIntoTheWorld(tempItemReference);
-                DestroyImmediate(tempItemReference.gameObject);
-
-            }
-            else
-            {
-                tempItemReference.SetActive(true);
-            }
-        });
-
-    }
-
-    private void DropItemIntoTheWorld(GameObject tempItemReference)
-    {
-        string cleanName = tempItemReference.name.Split(new string[] { "(Clone" }, StringSplitOptions.None)[0];
-
-        GameObject item = Instantiate(Resources.Load<GameObject>(cleanName + "_Model"));
-
-        item.transform.position = Vector3.zero;
-        var dropSpawnPosition = PlayerState.Instance.playerBody.transform.Find("DropPoint").transform.position;
-        item.transform.localPosition = new Vector3(dropSpawnPosition.x, dropSpawnPosition.y, dropSpawnPosition.z);
-
-        //var itemsObject = FindAnyObjectByType<>
-
-        DestroyImmediate(tempItemReference.gameObject);
-        //InventorySystem.Instance.ReCalc
+                if (response)
+                {
+                    // Remove the item from the inventory
+                    RemoveItem(itemName, 1);
+                }
+            });
+        }
     }
 }

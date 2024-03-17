@@ -13,9 +13,7 @@ public class AlertDialog : MonoBehaviour
 
 	private System.Action<bool> responseCallback;
 
-
-
-	void Start()
+    void Start()
 	{
 		dialogBox.SetActive(false);
 
