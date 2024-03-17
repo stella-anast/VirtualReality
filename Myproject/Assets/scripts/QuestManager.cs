@@ -69,6 +69,7 @@ public class QuestManager : MonoBehaviour
         allCompletedQuests.Add(quest);
         UnTrackQuest(quest);
 
+
         RefreshQuestList();
 
     }
@@ -148,7 +149,6 @@ public class QuestManager : MonoBehaviour
 
 
         }
-
     }
 
     void Update()

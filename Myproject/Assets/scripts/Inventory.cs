@@ -147,6 +147,7 @@ public class InventorySystem : MonoBehaviour
                 {
                     DestroyImmediate(slotList[i].transform.GetChild(0).gameObject);
                     counter -= 1;
+                    itemList.Remove(nameToRemove);
                 }
             }
         }
