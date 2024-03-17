@@ -23,11 +23,9 @@ public class InventorySystem : MonoBehaviour
     private GameObject whatSlotToEquip;
     private GameObject itemToAdd;
 
-    //public GameObject alertDialog; // Reference to the AlertDialog object
 
 
     public bool isOpen;
-    //public bool isFull;
 
     private void Awake()
     {
@@ -45,7 +43,6 @@ public class InventorySystem : MonoBehaviour
     void Start()
     {
         isOpen = false;
-        //isFull = false;
         inventoryScreenUI.SetActive(false);
 
         PopulateSlotList();
@@ -182,7 +179,6 @@ public class InventorySystem : MonoBehaviour
 
     private void OnSlotClicked(GameObject slot)
     {
-        // Check if the clicked slot contains an item
         if (slot.transform.childCount > 0)
         {
             // Get the name of the item in the slot
@@ -195,7 +191,6 @@ public class InventorySystem : MonoBehaviour
             {
                 if (response)
                 {
-                    // Remove the item from the inventory
                     RemoveItem(itemName, 1);
                 }
             });
