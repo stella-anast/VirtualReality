@@ -72,7 +72,7 @@ public class InventorySystem : MonoBehaviour
             inventoryScreenUI.SetActive(false);
             isOpen = false;
         }
-        else if (Input.GetMouseButtonDown(0)) // 0 represents the left mouse button
+        else if (Input.GetMouseButtonDown(0) && isOpen) // 0 represents the left mouse button
         {
             DropItem();
         }
