@@ -274,6 +274,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
     private void ReceiveRewardAndCompleteQuest()
     {
         currentActiveQuest.isCompleted = true;
+        QuestManager.Instance.MarkQuestCompleted(currentActiveQuest);
 
         var coinsRecieved = currentActiveQuest.info.coinReward;
         print("You recieved " + coinsRecieved + " gold coins");
