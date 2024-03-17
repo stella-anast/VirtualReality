@@ -46,6 +46,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
     }
 
 
+
     public bool Interact(Interactor interactor)
     {
         StartConversation();
@@ -67,6 +68,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
             playerInRange = false;
         }
     }
+
 
     internal void StartConversation()
     {

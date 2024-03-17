@@ -2,11 +2,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InventorySystem : MonoBehaviour
 {
 
     public static InventorySystem Instance { get; set; }
+    public static GameObject itemBeingClicked;
+
 
     public GameObject inventoryScreenUI;
     public GameObject slotUI;
@@ -68,6 +71,10 @@ public class InventorySystem : MonoBehaviour
         {
             inventoryScreenUI.SetActive(false);
             isOpen = false;
+        }
+        else if (Input.GetMouseButtonDown(0)) // 0 represents the left mouse button
+        {
+            DropItem();
         }
     }
 
@@ -154,5 +161,44 @@ public class InventorySystem : MonoBehaviour
 
         QuestManager.Instance.RefreshTrackerList();
 
+    }
+
+    public void DropItem()
+    {
+        var tempItemReference = gameObject;
+
+        tempItemReference.SetActive(false);
+
+        AlertDialog dialog = FindAnyObjectByType<AlertDialog>();
+        dialog.ShowDialog("Do you want to remove this item?", (response)=>
+        {
+            if (response)
+            {
+                //DropItemIntoTheWorld(tempItemReference);
+                DestroyImmediate(tempItemReference.gameObject);
+
+            }
+            else
+            {
+                tempItemReference.SetActive(true);
+            }
+        });
+
+    }
+
+    private void DropItemIntoTheWorld(GameObject tempItemReference)
+    {
+        string cleanName = tempItemReference.name.Split(new string[] { "(Clone" }, StringSplitOptions.None)[0];
+
+        GameObject item = Instantiate(Resources.Load<GameObject>(cleanName + "_Model"));
+
+        item.transform.position = Vector3.zero;
+        var dropSpawnPosition = PlayerState.Instance.playerBody.transform.Find("DropPoint").transform.position;
+        item.transform.localPosition = new Vector3(dropSpawnPosition.x, dropSpawnPosition.y, dropSpawnPosition.z);
+
+        //var itemsObject = FindAnyObjectByType<>
+
+        DestroyImmediate(tempItemReference.gameObject);
+        //InventorySystem.Instance.ReCalc
     }
 }

@@ -27,12 +27,15 @@ public class Interactor : MonoBehaviour
                 Debug.Log("inside interactable not null");
                 if (!_interactionPromptUI.IsDisplayed)
                     _interactionPromptUI.SetUp(_interactable.InteractionPrompt);
+
                 if (Keyboard.current.rKey.wasPressedThisFrame)
                     _interactable.Interact(this);
+
                 if (Keyboard.current.lKey.wasPressedThisFrame)
                 {
                     _interactable.Interact(this);
                 }
+
                 
             }
          
