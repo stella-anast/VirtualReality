@@ -6,13 +6,13 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 
 {
-    [SerializeField] float health = 3;
+    [SerializeField] float health;
 
 
     [Header("Combat")]
     [SerializeField] float attackCD = 2f;
     [SerializeField] float attackRange = 1f;
-    [SerializeField] float aggroRange = 2f;
+    [SerializeField] float aggroRange = 3f;
 
     GameObject player;
     NavMeshAgent agent;
