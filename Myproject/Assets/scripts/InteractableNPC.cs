@@ -84,7 +84,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
             StartQuestInitialDialog();
             currentDialog = 0;
         }
-        else // Interacting with the NPC after the first time
+         // Interacting with the NPC after the first time
         {
 
             // If we return after declining the quest
@@ -317,6 +317,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
         npcDialogText.text = currentActiveQuest.info.declineAnswer;
         CloseDialogUI();
     }
+
     public void LookAtPlayer()
     {
         var player = PlayerState.Instance.playerBody.transform;
