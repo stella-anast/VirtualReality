@@ -27,6 +27,10 @@ public class DamageDealer : MonoBehaviour
                 {
                     enemy.TakeDamage(weaponDamage);
                     hasDealtDamage.Add(hit.transform.gameObject);
+                }else if (hit.transform.TryGetComponent(out DragonEnemy dragonEnemy) && !hasDealtDamage.Contains(hit.transform.gameObject))
+                {
+                    dragonEnemy.TakeDamage(weaponDamage);
+                    hasDealtDamage.Add(hit.transform.gameObject);
                 }
             }
         }
