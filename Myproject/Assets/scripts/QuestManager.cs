@@ -25,12 +25,17 @@ public class QuestManager : MonoBehaviour
 
     public List<Quest> allTrackedQuests;
 
+    public string currentDifficultyLevel;
+    public string requiredDifficulty;
+
+
 
     private void Start()
     {
         questMenu.SetActive(false);
 
     }
+    
 
     private void Awake()
     {
@@ -58,9 +63,18 @@ public class QuestManager : MonoBehaviour
 
     public void AddActiveQuest(Quest quest)
     {
-        allActiveQuests.Add(quest);
-        TrackQuest(quest);
-        RefreshQuestList();
+
+        currentDifficultyLevel = mainMenu.Instance.gameDifficulty;
+        if (quest.requiredDifficulty.Equals(currentDifficultyLevel))
+        {
+            allActiveQuests.Add(quest);
+            TrackQuest(quest);
+            RefreshQuestList();
+        }
+        else
+        {
+            Debug.Log("This quest is not available at the current difficulty level.");
+        }
     }
 
     public void MarkQuestCompleted(Quest quest)
@@ -176,5 +190,6 @@ public class QuestManager : MonoBehaviour
             }
         }
     }
+
 }
 

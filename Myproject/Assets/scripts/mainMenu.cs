@@ -14,7 +14,7 @@ public class mainMenu : MonoBehaviour
     float timeScaleBeforeMenu = 1f;
     bool cursorWasVisible;
     CursorLockMode cursorWaslocked;
-    string gameDifficulty;
+    public string gameDifficulty;
 
     void Start()
     {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13985,7 +13985,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1932934973}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9796271
+  m_Size: 0.99999523
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -35162,6 +35162,18 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: ef3626258eed84db787b091da4d7a186, type: 2}
+    requiredDifficulty: 1
+  - questName: Steve's Cabin
+    questGiver: Steve
+    questDescription: Steve knows everything in this town. He will help you find
+      your next move.
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: b4b479cf4359d436fb5bdbd55d791600, type: 2}
+    requiredDifficulty: 2
   currentActiveQuest:
     questName: 
     questGiver: 
@@ -35172,6 +35184,7 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
+    requiredDifficulty: 0
   activeQuestIndex: 0
   firstTimeInteraction: 1
   currentDialog: 0
@@ -42612,6 +42625,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99922ed96f26740a5b6e9b23fb58e1a1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1302327145}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99922ed96f26740a5b6e9b23fb58e1a1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1302327147}
   m_SourcePrefab: {fileID: 100100000, guid: 99922ed96f26740a5b6e9b23fb58e1a1, type: 3}
 --- !u!1 &1302327138 stripped
 GameObject:
@@ -42709,6 +42725,7 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 965fa0dc7077f464d99a77cecfb2dabb, type: 2}
+    requiredDifficulty: 1
   - questName: Crafting materials
     questGiver: Melina
     questDescription: I need materials so I can craft some things for my house
@@ -42718,6 +42735,47 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 8c6d6a894840b46d198c1c6f01583ba5, type: 2}
+    requiredDifficulty: 1
+  - questName: Crafting materials
+    questGiver: Melina
+    questDescription: I need materials so I can craft some things for my house
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: c605ab5922355438a876099b8302327d, type: 2}
+    requiredDifficulty: 0
+  - questName: Crafting materials
+    questGiver: Melina
+    questDescription: I need materials so I can craft some things for my house
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: b4f59b72418cc4a13a662490f773f2c3, type: 2}
+    requiredDifficulty: 2
+  - questName: I need a way to warm up my house
+    questGiver: Melina
+    questDescription: Collect 6 piles of wood and deliver them to Melina
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 8618c523e14904717af9420435ab41d3, type: 2}
+    requiredDifficulty: 0
+  - questName: I need a way to warm up my house
+    questGiver: Melina
+    questDescription: Collect 6 piles of wood and deliver them to Melina
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: ff097fa333a6949debd81213956e7331, type: 2}
+    requiredDifficulty: 2
   - questName: Collect Wood
     questGiver: Melina
     questDescription: I need materials to sell to my friend. Please help me I need
@@ -42728,6 +42786,18 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: ddcb79a1c96c243a394a9010832bead1, type: 2}
+    requiredDifficulty: 1
+  - questName: Collect Wood
+    questGiver: Melina
+    questDescription: I need materials to sell to my friend. Please help me I need
+      the money
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 3e115dce87ba84dc6bcecbbbddfc2c18, type: 2}
+    requiredDifficulty: 2
   currentActiveQuest:
     questName: 
     questGiver: 
@@ -42738,9 +42808,22 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
+    requiredDifficulty: 0
   activeQuestIndex: 0
   firstTimeInteraction: 1
   currentDialog: 0
+--- !u!114 &1302327147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302327138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5446975b2c5cd46da84eb7fe332496ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1307492076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53620,7 +53703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1524861287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53722,6 +53805,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuScreen: {fileID: 1524861286}
   cinemachineBrain: {fileID: 1121915523}
+  gameDifficulty: 
 --- !u!1001 &1531363144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64373,6 +64457,27 @@ MonoBehaviour:
   isTalkingWithPlayer: 0
   playerInRange: 0
   quests:
+  - questName: The Guard's secret
+    questGiver: Bridge Guard
+    questDescription: Give the guard coins and he may help you with the location
+      of the key
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 3d518f51c6fe0427c9edaec6d20bf749, type: 2}
+    requiredDifficulty: 0
+  - questName: The Guard's quest 2
+    questGiver: Bridge Guard
+    questDescription: Kill the guard castle
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 6527ee0fc97464b198dc738068ee4073, type: 2}
+    requiredDifficulty: 1
   - questName: The Guard's quest
     questGiver: Bridge Guard
     questDescription: Give the guard coins and lknives and be careful for what he
@@ -64383,6 +64488,18 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 9c56732224b8d491f881627b0a893f6d, type: 2}
+    requiredDifficulty: 1
+  - questName: The Guard's quest
+    questGiver: Bridge Guard
+    questDescription: Give the guard coins and lknives and be careful for what he
+      is about to ask next...
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 910f7eae44bd447eda4e152a71c448e6, type: 2}
+    requiredDifficulty: 2
   currentActiveQuest:
     questName: 
     questGiver: 
@@ -64393,6 +64510,7 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
+    requiredDifficulty: 0
   activeQuestIndex: 0
   firstTimeInteraction: 1
   currentDialog: 0
@@ -69927,7 +70045,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000002861023, y: 0.00001240918}
+  m_AnchoredPosition: {x: 0.000002861023, y: -0.000009771769}
   m_SizeDelta: {x: -0.00024414, y: 433}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1932934972
@@ -72104,6 +72222,8 @@ MonoBehaviour:
   questTrackerContent: {fileID: 1932410997}
   trackerRowPrefab: {fileID: 3529040492584034935, guid: 3956c350892444f6f86138c78d8118c1, type: 3}
   allTrackedQuests: []
+  currentDifficultyLevel: 
+  requiredDifficulty: 
 --- !u!4 &2025967420
 Transform:
   m_ObjectHideFlags: 0

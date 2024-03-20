@@ -2,6 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 
+public enum DifficultyLevel
+{
+    Easy,
+    Medium,
+    Hard
+}
+
 [System.Serializable]
 public class Quest
 {
@@ -20,5 +27,8 @@ public class Quest
 
     [Header("Quest Info")]
     public QuestInfo info;
+
+    public DifficultyLevel requiredDifficulty;
+
 }
 
