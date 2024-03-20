@@ -14,6 +14,7 @@ public class DragonEnemy: MonoBehaviour
     [SerializeField] float attackRange = 1f;
     [SerializeField] float aggroRange = 3f;
 
+    [SerializeField] ParticleSystem flamethrowerFire;
     GameObject player;
     NavMeshAgent agent;
     Animator animator;
@@ -60,6 +61,20 @@ public class DragonEnemy: MonoBehaviour
         if (health <= 0)
         {
             animator.SetTrigger("death");
+        }
+    }
+    public void startFire()
+    {
+        if (flamethrowerFire != null)
+        {
+            flamethrowerFire.Play();
+        }
+    }
+    public void stopFire()
+    {
+        if (flamethrowerFire != null)
+        {
+            flamethrowerFire.Stop();
         }
     }
     public void StartDealDamage()

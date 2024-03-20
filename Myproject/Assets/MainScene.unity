@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -26333,7 +26333,10 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 114944368084590064, guid: 51a5e06934e40e1468d0367239466bc4, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4023927267264888, guid: 51a5e06934e40e1468d0367239466bc4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1968905850}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1703160672665336, guid: 51a5e06934e40e1468d0367239466bc4, type: 3}
       insertIndex: -1
@@ -45037,6 +45040,7 @@ MonoBehaviour:
   attackCD: 5
   attackRange: 26
   aggroRange: 18
+  flamethrowerFire: {fileID: 1489370761}
 --- !u!136 &1385272627
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47655,7 +47659,7 @@ GameObject:
   - component: {fileID: 1489370762}
   - component: {fileID: 1489370761}
   - component: {fileID: 1489370760}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: FlamethrowerFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47990,8 +47994,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 3
-      minScalar: 1
+      scalar: 10
+      minScalar: 6
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -48332,14 +48336,14 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 2
+    angle: 0
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 1, y: 300, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -48475,7 +48479,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 360
+      value: 90
       mode: 0
       spread: 0
       speed:
@@ -52356,13 +52360,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489370759}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.029797602, y: -0.87701607, z: 0.012452865, w: 0.47937444}
-  m_LocalPosition: {x: 750.878, y: 17.083, z: 681.091}
+  m_LocalRotation: {x: -0.47165847, y: -0.43344045, z: -0.51660407, w: 0.5681443}
+  m_LocalPosition: {x: -0.000000100484385, y: -0.0013435689, z: -0.000000009886435}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 2.89, y: -122.737, z: -2.314}
+  m_Father: {fileID: 1968905850}
+  m_LocalEulerAnglesHint: {x: -79.665, y: -361.658, z: 276.824}
 --- !u!1001 &1499256546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53616,7 +53620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1524861287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70918,6 +70922,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -89.668, z: 0}
+--- !u!1 &1968905849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1968905850}
+  m_Layer: 7
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1968905850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968905849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1489370762}
+  m_Father: {fileID: 1998200976}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1968962364
 GameObject:
   m_ObjectHideFlags: 0
@@ -71492,6 +71528,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65455e9cadb20c240b31aaa375be7780, type: 3}
+--- !u!4 &1998200976 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4023927267264888, guid: 51a5e06934e40e1468d0367239466bc4, type: 3}
+  m_PrefabInstance: {fileID: 807848258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2005267588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76644,6 +76685,5 @@ SceneRoots:
   - {fileID: 1601276533}
   - {fileID: 631349594}
   - {fileID: 807848258}
-  - {fileID: 1489370762}
   - {fileID: 1053836026}
   - {fileID: 623118011}
