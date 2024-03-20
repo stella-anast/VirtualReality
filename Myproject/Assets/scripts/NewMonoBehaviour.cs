@@ -20,9 +20,11 @@ public class ExampleScript : MonoBehaviour
     public void PrintActiveQuests()
     {
         Debug.Log("Active Quests:");
+        /*
         foreach (Quest quest in allActiveQuests)
         {
             Debug.Log("Quest Name: " + quest.questName + ", Difficulty Level: " + quest.requiredDifficulty);
         }
+        */
     }
 }
