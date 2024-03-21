@@ -15,6 +15,8 @@ public class PauseMenu : MonoBehaviour
     bool cursorWasVisible;
     CursorLockMode cursorWaslocked;
 
+    public GameObject minimapCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +48,7 @@ public class PauseMenu : MonoBehaviour
     // Pauses the app by freezing the time scale
     public void Pause()
     {
+        minimapCanvas.SetActive(false);
         onPause = true;
 
         // Cursor
@@ -74,6 +77,7 @@ public class PauseMenu : MonoBehaviour
     // Pauses the app by unfreezing the time scale
     public void Unpause()
     {
+        minimapCanvas.SetActive(true);
         onPause = false;
 
         // Cursor

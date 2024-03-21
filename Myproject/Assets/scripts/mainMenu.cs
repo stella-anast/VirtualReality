@@ -16,6 +16,7 @@ public class mainMenu : MonoBehaviour
     CursorLockMode cursorWaslocked;
     public string gameDifficulty;
 
+    [SerializeField] GameObject minimapCanvas;
     void Start()
     {
         Instance = this;
@@ -42,6 +43,7 @@ public class mainMenu : MonoBehaviour
         timeScaleBeforeMenu = Time.timeScale; //store value
 
         Time.timeScale = 0f;
+        minimapCanvas.SetActive(false);
     }
 
     public void closeMenu()
@@ -56,6 +58,7 @@ public class mainMenu : MonoBehaviour
         cinemachineBrain.enabled = !onMenu; //enable camera control with mouse movement
 
         Time.timeScale = timeScaleBeforeMenu;
+        minimapCanvas.SetActive(true);
     }
 
     /*public void PlayStartGame()
