@@ -44007,7 +44007,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1134396429}
   m_HandleRect: {fileID: 1134396428}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -47474,18 +47474,28 @@ MonoBehaviour:
     initialDialogCompleted: 0
     isCompleted: 0
     hasNoRequirements: 0
-    info: {fileID: 11400000, guid: 965fa0dc7077f464d99a77cecfb2dabb, type: 2}
-    requiredDifficulty: 1
-  - questName: Crafting materials
+    info: {fileID: 11400000, guid: 8618c523e14904717af9420435ab41d3, type: 2}
+    requiredDifficulty: 0
+  - questName: I need a way to warm up my house
     questGiver: Melina
-    questDescription: I need materials so I can craft some things for my house
+    questDescription: Collect 6 piles of wood and deliver them to Melina
     accepted: 0
     declined: 0
     initialDialogCompleted: 0
     isCompleted: 0
     hasNoRequirements: 0
-    info: {fileID: 11400000, guid: 8c6d6a894840b46d198c1c6f01583ba5, type: 2}
+    info: {fileID: 11400000, guid: 965fa0dc7077f464d99a77cecfb2dabb, type: 2}
     requiredDifficulty: 1
+  - questName: I need a way to warm up my house
+    questGiver: Melina
+    questDescription: Collect 6 piles of wood and deliver them to Melina
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: ff097fa333a6949debd81213956e7331, type: 2}
+    requiredDifficulty: 2
   - questName: Crafting materials
     questGiver: Melina
     questDescription: I need materials so I can craft some things for my house
@@ -47504,27 +47514,17 @@ MonoBehaviour:
     initialDialogCompleted: 0
     isCompleted: 0
     hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 8c6d6a894840b46d198c1c6f01583ba5, type: 2}
+    requiredDifficulty: 1
+  - questName: Crafting materials
+    questGiver: Melina
+    questDescription: I need materials so I can craft some things for my house
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
     info: {fileID: 11400000, guid: b4f59b72418cc4a13a662490f773f2c3, type: 2}
-    requiredDifficulty: 2
-  - questName: I need a way to warm up my house
-    questGiver: Melina
-    questDescription: Collect 6 piles of wood and deliver them to Melina
-    accepted: 0
-    declined: 0
-    initialDialogCompleted: 0
-    isCompleted: 0
-    hasNoRequirements: 0
-    info: {fileID: 11400000, guid: 8618c523e14904717af9420435ab41d3, type: 2}
-    requiredDifficulty: 0
-  - questName: I need a way to warm up my house
-    questGiver: Melina
-    questDescription: Collect 6 piles of wood and deliver them to Melina
-    accepted: 0
-    declined: 0
-    initialDialogCompleted: 0
-    isCompleted: 0
-    hasNoRequirements: 0
-    info: {fileID: 11400000, guid: ff097fa333a6949debd81213956e7331, type: 2}
     requiredDifficulty: 2
   - questName: Collect Wood
     questGiver: Melina
@@ -50710,7 +50710,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000014305115, y: 0.00017385371}
+  m_AnchoredPosition: {x: -0.000014305115, y: -0.00004196167}
   m_SizeDelta: {x: -0.00024414, y: 433}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1443914213
@@ -58870,8 +58870,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 250
-  m_fontSizeBase: 250
+  m_fontSize: 240
+  m_fontSizeBase: 240
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -64377,16 +64377,6 @@ MonoBehaviour:
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 3d518f51c6fe0427c9edaec6d20bf749, type: 2}
     requiredDifficulty: 0
-  - questName: The Guard's quest 2
-    questGiver: Bridge Guard
-    questDescription: Kill the guard castle
-    accepted: 0
-    declined: 0
-    initialDialogCompleted: 0
-    isCompleted: 0
-    hasNoRequirements: 0
-    info: {fileID: 11400000, guid: 6527ee0fc97464b198dc738068ee4073, type: 2}
-    requiredDifficulty: 1
   - questName: The Guard's quest
     questGiver: Bridge Guard
     questDescription: Give the guard coins and lknives and be careful for what he
@@ -64409,6 +64399,16 @@ MonoBehaviour:
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 910f7eae44bd447eda4e152a71c448e6, type: 2}
     requiredDifficulty: 2
+  - questName: The Guard's quest 2
+    questGiver: Bridge Guard
+    questDescription: Kill the guard castle
+    accepted: 0
+    declined: 0
+    initialDialogCompleted: 0
+    isCompleted: 0
+    hasNoRequirements: 0
+    info: {fileID: 11400000, guid: 6527ee0fc97464b198dc738068ee4073, type: 2}
+    requiredDifficulty: 1
   currentActiveQuest:
     questName: 
     questGiver: 
@@ -67638,8 +67638,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1166442970}
   m_HandleRect: {fileID: 1166442969}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.9999908
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -72792,7 +72792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -28.60791, y: 26.521484}
+  m_AnchoredPosition: {x: -28.60785, y: 26.521484}
   m_SizeDelta: {x: 712.2186, y: 452.3276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2035453651

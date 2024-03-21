@@ -10,6 +10,7 @@ using UnityEngine.Playables;
 
 public class InteractableNPC : MonoBehaviour, IInteractable
 {
+
     [SerializeField] private string _prompt;
     public GameObject player;
 
@@ -27,14 +28,17 @@ public class InteractableNPC : MonoBehaviour, IInteractable
     TextMeshProUGUI option2ButtonText;
 
     public List<Quest> quests;
+    private List<Quest> questsWithRequiredDifficulty = new List<Quest>();
     public Quest currentActiveQuest = null;
     public int activeQuestIndex = 0;
     public bool firstTimeInteraction = true;
     public int currentDialog;
 
+    
 
     private void Start()
     {
+
         npcDialogText = DialogSystem.Instance.dialogText;
 
         option1Button = DialogSystem.Instance.option1Button;
@@ -45,6 +49,30 @@ public class InteractableNPC : MonoBehaviour, IInteractable
 
     }
 
+    public void test()
+    {
+        foreach (Quest quest in quests)
+        {
+            Debug.Log("Quest count: " + quests.Count);
+
+            if (quest != null && !string.IsNullOrEmpty(quest.requiredDifficulty.ToString()) && mainMenu.Instance != null && !string.IsNullOrEmpty(mainMenu.Instance.gameDifficulty))
+            {
+                Debug.LogWarning("One of the objects involved is null: quest=" + quest + ", requiredDifficulty=" + (quest != null ? quest.requiredDifficulty : "null") + ", mainMenu.Instance=" + mainMenu.Instance + ", gameDifficulty=" + (mainMenu.Instance != null ? mainMenu.Instance.gameDifficulty : "null"));
+                string questDifficulty = quest.requiredDifficulty.ToString();
+                string gameDifficulty = mainMenu.Instance.gameDifficulty;
+
+                if (questDifficulty.Equals(gameDifficulty, StringComparison.OrdinalIgnoreCase))
+                {
+                    Debug.Log("Quest with required difficulty found: " + quest.questName);
+                    questsWithRequiredDifficulty.Add(quest); // Add the quest to the list
+                }
+            }
+            else
+            {
+                Debug.LogWarning("One of the objects involved is null: quest=" + quest + ", requiredDifficulty=" + (quest != null ? quest.requiredDifficulty : "null") + ", mainMenu.Instance=" + mainMenu.Instance + ", gameDifficulty=" + (mainMenu.Instance != null ? mainMenu.Instance.gameDifficulty : "null"));
+            }
+        }
+    }
 
 
     public bool Interact(Interactor interactor)
@@ -73,14 +101,18 @@ public class InteractableNPC : MonoBehaviour, IInteractable
     internal void StartConversation()
     {
         isTalkingWithPlayer = true;
-
+        test();
         LookAtPlayer();
+
+        currentActiveQuest = FindQuestWithDifficulty(mainMenu.Instance.gameDifficulty);
+        //Debug.Log("current active quest" + currentActiveQuest.questName);
+        Debug.Log("gameDifficulty" + mainMenu.Instance.gameDifficulty);
 
         // Interacting with the NPC for the first time
         if (firstTimeInteraction)
         {
             firstTimeInteraction = false;
-            currentActiveQuest = quests[activeQuestIndex]; // 0 at start
+            currentActiveQuest = questsWithRequiredDifficulty[0];
             StartQuestInitialDialog();
             currentDialog = 0;
         }
@@ -169,6 +201,23 @@ public class InteractableNPC : MonoBehaviour, IInteractable
         });
 
         option2Button.gameObject.SetActive(false);
+    }
+
+    private Quest FindQuestWithDifficulty(string difficulty)
+    {
+        // Iterate through quests to find the one with the desired difficulty
+        foreach (Quest quest in quests)
+        {
+            if (quest.requiredDifficulty.Equals(difficulty))
+            {
+                Debug.Log("requiredDifficulty" + quest.requiredDifficulty);
+
+                return quest;
+            }
+        }
+
+        // If no quest with the desired difficulty is found, return null or handle appropriately
+        return null;
     }
 
     private void AcceptedQuest()

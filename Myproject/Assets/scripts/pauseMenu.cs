@@ -96,11 +96,19 @@ public class PauseMenu : MonoBehaviour
         // Set the speed that time passes back to what it was before pause
         Time.timeScale = timeScaleBeforePause;
     }
+    private void ReloadScene()
+    {
+        // Get the name of the current scene
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        // Reload the current scene
+        SceneManager.LoadScene(currentSceneName);
+
+    }
 
     public void ExitToMainMenu()
     {
         Unpause();
-        mainMenu.Instance.Menu();
+        ReloadScene();
 
     }
 }

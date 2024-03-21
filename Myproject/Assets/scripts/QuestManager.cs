@@ -65,6 +65,9 @@ public class QuestManager : MonoBehaviour
     {
 
         currentDifficultyLevel = mainMenu.Instance.gameDifficulty;
+
+        Debug.Log("heloo"+ currentDifficultyLevel);
+
         if (quest.requiredDifficulty.Equals(currentDifficultyLevel))
         {
             allActiveQuests.Add(quest);

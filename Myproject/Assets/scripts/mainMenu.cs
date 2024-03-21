@@ -24,7 +24,17 @@ public class mainMenu : MonoBehaviour
 
     }
 
-   
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     public void Menu()
     {
@@ -61,24 +71,19 @@ public class mainMenu : MonoBehaviour
         minimapCanvas.SetActive(true);
     }
 
-    /*public void PlayStartGame()
-    {
-        SceneManager.UnloadSceneAsync("MainMenu");
-    }*/
+   
 
     public void PlayEasyGame()
     {
         gameDifficulty = "Easy";
         Debug.Log(gameDifficulty);
-
         closeMenu();
-
     }
+
     public void PlayMediumGame()
     {
         gameDifficulty = "Medium";
         Debug.Log(gameDifficulty);
-
         closeMenu();
     }
 
@@ -86,8 +91,16 @@ public class mainMenu : MonoBehaviour
     {
         gameDifficulty = "Hard";
         Debug.Log(gameDifficulty);
-
         closeMenu();
+    }
+
+    private void ReloadScene()
+    {
+        // Get the name of the current scene
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        // Reload the current scene
+        SceneManager.LoadScene(currentSceneName);
+
     }
 
     public void QuitGame()
