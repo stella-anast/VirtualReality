@@ -1,24 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] float health = 100;
-
-
+    [SerializeField] float maxHealth = 100;
+    private float currentHealth;
+    public Image healthBar;
     Animator animator;
+
     void Start()
     {
         animator = GetComponent<Animator>();
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage(float damageAmount)
     {
-        health -= damageAmount;
+        currentHealth -= damageAmount;
         animator.SetTrigger("Damage");
 
-        if (health <= 0)
+        // Update the health bar's fill amount
+        healthBar.fillAmount = currentHealth / maxHealth;
+
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -26,7 +32,6 @@ public class HealthSystem : MonoBehaviour
 
     void Die()
     {
-
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 }

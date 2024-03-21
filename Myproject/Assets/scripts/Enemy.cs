@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 
 {
-    [SerializeField] float health;
-
+    [SerializeField] float maxHealth=10f;
+    public Slider healthSlider;
+    public float currentHealth;
 
     [Header("Combat")]
     [SerializeField] float attackCD = 2f;
@@ -19,13 +21,16 @@ public class Enemy : MonoBehaviour
     Animator animator;
     float timePassed;
     float newDestinationCD = 0.5f;
+    [SerializeField] float healthBarLerpSpeed = 5f;
+    private float targetHealthValue;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-
+        currentHealth = maxHealth;
+        targetHealthValue = currentHealth / maxHealth;
     }
     void Update()
     {
@@ -55,15 +60,22 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
-        health -= damageAmount;
+        currentHealth -= damageAmount;
         animator.SetTrigger("damage");
         
 
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
+            currentHealth = 0;
             animator.SetTrigger("death");
            
         }
+        targetHealthValue = currentHealth / maxHealth;
+    }
+    void FixedUpdate()
+    {
+        // Smoothly update the health slider value
+        healthSlider.value = Mathf.Lerp(healthSlider.value, targetHealthValue, Time.fixedDeltaTime * healthBarLerpSpeed);
     }
     public void StartDealDamage()
     {
