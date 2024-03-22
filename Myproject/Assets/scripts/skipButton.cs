@@ -18,9 +18,9 @@ public class skipButton : MonoBehaviour
 
     }
 
-    public string sceneName;
-    public void startGame() 
+    [SerializeField] GameObject introScreen;
+    public void closeIntroScene() 
     {
-        SceneManager.LoadScene(sceneName);
+        introScreen.SetActive(false);
     }
 }

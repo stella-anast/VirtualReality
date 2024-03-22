@@ -17,6 +17,7 @@ public class HomeScreen : MonoBehaviour
     CursorLockMode cursorWaslocked;
 
     [SerializeField] GameObject minimapCanvas;
+    [SerializeField] GameObject healthBar;
     void Start()
     {
         startHomeScreen();

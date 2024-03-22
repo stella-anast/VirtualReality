@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1729,6 +1729,7 @@ MonoBehaviour:
   menuScreen: {fileID: 1524861286}
   cinemachineBrain: {fileID: 1121915523}
   minimapCanvas: {fileID: 1053836022}
+  healthBar: {fileID: 2065777646}
 --- !u!114 &58016452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21106,7 +21107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 394.9, y: 154}
+  m_AnchoredPosition: {x: 327, y: 149}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &502784643
@@ -39983,7 +39984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1053836023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45779,7 +45780,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1134396429}
   m_HandleRect: {fileID: 1134396428}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -52719,7 +52720,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000014305115, y: -0.000016620721}
+  m_AnchoredPosition: {x: -0.000014305115, y: 0.0000021840142}
   m_SizeDelta: {x: -0.00024414, y: 433}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1443914213
@@ -56096,6 +56097,7 @@ MonoBehaviour:
   dragon: {fileID: 1385272613}
   cinemachineBrain: {fileID: 1121915523}
   gameDifficulty: 
+  introScreen: {fileID: 1563337600}
   minimapCanvas: {fileID: 1053836022}
 --- !u!1001 &1531363144
 PrefabInstance:
@@ -57365,7 +57367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96907987dd67f44dbe3a3e505b2b9ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
+  introScreen: {fileID: 0}
 --- !u!114 &1563337603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70315,7 +70317,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1166442969}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9998492
+  m_Size: 0.99948746
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -76479,7 +76481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2065777647
 MonoBehaviour:
   m_ObjectHideFlags: 0

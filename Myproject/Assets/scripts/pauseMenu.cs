@@ -17,7 +17,7 @@ public class PauseMenu : MonoBehaviour
     bool cursorWasVisible;
     CursorLockMode cursorWaslocked;
 
-    public GameObject minimapCanvas;
+    [SerializeField] GameObject minimapCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +63,9 @@ public class PauseMenu : MonoBehaviour
         // Show pause screen
         pauseScreen.SetActive(onPause);
 
+        //Hide minimap
+        minimapCanvas.SetActive(false);
+
         // ------- Disabling any extra behaviours ----------
 
         cinemachineBrain.enabled = !onPause; //disable camera control with mouse movement
@@ -88,6 +91,9 @@ public class PauseMenu : MonoBehaviour
 
         // Hide pause screen
         pauseScreen.SetActive(onPause);
+
+        //Show minimap
+        minimapCanvas.SetActive(true);
 
         // ------- Enabling any extra behaviours ----------
 
