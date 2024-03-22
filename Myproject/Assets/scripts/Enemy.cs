@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] float maxHealth = 10f;
+    [SerializeField] GameObject defeatScreen;
+
     public Slider healthSlider;
     public float currentHealth;
 
@@ -70,6 +72,7 @@ public class Enemy : MonoBehaviour
             currentHealth = 0;
             animator.SetTrigger("death");
             playerIsAlive = false; // Ensure playerIsAlive is set to false when the enemy dies
+            defeatScreen.SetActive(true);
         }
        
     }
