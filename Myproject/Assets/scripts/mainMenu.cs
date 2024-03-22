@@ -12,6 +12,9 @@ public class mainMenu : MonoBehaviour
     [SerializeField] GameObject menuScreen;
     [SerializeField] GameObject oldMan;
     [SerializeField] GameObject dragon;
+    [SerializeField] GameObject keyEasy;
+    [SerializeField] GameObject keyHard;
+
 
     [SerializeField] CinemachineBrain cinemachineBrain;
     bool onMenu = false;
@@ -96,6 +99,7 @@ public class mainMenu : MonoBehaviour
         gameDifficulty = "Medium";
         Debug.Log(gameDifficulty);
         Destroy(dragon);
+        Destroy(keyHard);
 
         closeMenu();
     }
@@ -104,6 +108,7 @@ public class mainMenu : MonoBehaviour
     {
         gameDifficulty = "Hard";
         Debug.Log(gameDifficulty);
+        Destroy(keyEasy);
         closeMenu();
     }
 

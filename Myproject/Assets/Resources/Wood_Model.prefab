@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4188557300974550609}
   - component: {fileID: 230441682253829103}
   - component: {fileID: 848046828560101191}
-  - component: {fileID: 7464524262664329202}
   - component: {fileID: 611760954225175943}
   m_Layer: 6
   m_Name: Wood_Model
@@ -108,21 +107,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 7091a1ae0fcc48240805a69623378322, type: 3}
---- !u!114 &7464524262664329202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2130379941124086861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49213257736ac48c299caa1c03e6c856, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prompt: 
-  player: {fileID: 0}
-  ItemName: 
 --- !u!114 &611760954225175943
 MonoBehaviour:
   m_ObjectHideFlags: 0

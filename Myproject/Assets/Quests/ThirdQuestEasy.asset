@@ -28,9 +28,11 @@ MonoBehaviour:
   finalWords: In the woods you will find an old cabin. If you look carefully you
     will find the key.
   coinReward: 0
-  rewardItem1: 
+  rewardItem1: Key
   rewardItem2: 
   firstRequirementItem: Coins
   firstRequirementAmount: 4
   secondRequirementItem: 
   secondRequirementAmount: 0
+  thirdRequirementItem: 
+  thirdRequirementAmount: 0
