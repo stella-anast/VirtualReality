@@ -90,6 +90,7 @@ public class mainMenu : MonoBehaviour
         Debug.Log(gameDifficulty);
         Destroy(oldMan);
         Destroy(dragon);
+        Destroy(keyHard);
 
         closeMenu();
     }
@@ -99,6 +100,7 @@ public class mainMenu : MonoBehaviour
         gameDifficulty = "Medium";
         Debug.Log(gameDifficulty);
         Destroy(dragon);
+        Destroy(keyEasy);
         Destroy(keyHard);
 
         closeMenu();
