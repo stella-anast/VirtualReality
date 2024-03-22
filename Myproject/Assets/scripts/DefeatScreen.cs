@@ -75,8 +75,15 @@ public class DefeatScreen : MonoBehaviour
     public void PlayAgain(mainMenu mainMenu)
     {
         closeDefeatScreen();
-        mainMenu.Menu();
-        menuScreen.SetActive(true);
+        ReloadScene();
+    }
+    private void ReloadScene()
+    {
+        // Get the name of the current scene
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        // Reload the current scene
+        SceneManager.LoadScene(currentSceneName);
+
     }
 
 }

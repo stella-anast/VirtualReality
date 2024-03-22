@@ -10,12 +10,13 @@ public class HealthSystem : MonoBehaviour
     public Image healthBar;
     Animator animator;
     Enemy enemy;
-
+    [SerializeField] GameObject defeatScreen;
     void Start()
     {
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
         enemy = FindObjectOfType<Enemy>();
+       
     }
 
     public void TakeDamage(float damageAmount)
@@ -33,11 +34,14 @@ public class HealthSystem : MonoBehaviour
             {
                 enemy.PlayerDied(); 
             }
+           
+            
         }
     }
 
     void Die()
     {
-        Destroy(gameObject);
+        DefeatScreen.Instance.startDefeatScreen();
+        defeatScreen.SetActive(true);
     }
 }
