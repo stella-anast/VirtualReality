@@ -8,7 +8,11 @@ public class mainMenu : MonoBehaviour
 {
     public static mainMenu Instance { get; set; }
 
-    [SerializeField] GameObject menuScreen; 
+    [SerializeField] GameObject menuScreen;
+    [SerializeField] GameObject oldMan;
+    [SerializeField] GameObject dragon;
+
+
     [SerializeField] CinemachineBrain cinemachineBrain;
     bool onMenu = false;
     float timeScaleBeforeMenu = 1f;
@@ -76,6 +80,9 @@ public class mainMenu : MonoBehaviour
     {
         gameDifficulty = "Easy";
         Debug.Log(gameDifficulty);
+        Destroy(oldMan);
+        Destroy(dragon);
+
         closeMenu();
     }
 
@@ -83,6 +90,8 @@ public class mainMenu : MonoBehaviour
     {
         gameDifficulty = "Medium";
         Debug.Log(gameDifficulty);
+        Destroy(dragon);
+
         closeMenu();
     }
 
