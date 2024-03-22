@@ -19,7 +19,7 @@ public class mainMenu : MonoBehaviour
     [SerializeField] GameObject minimapCanvas;
     void Start()
     {
-        Instance = this;
+        //Instance = this;
         Menu();
 
     }
