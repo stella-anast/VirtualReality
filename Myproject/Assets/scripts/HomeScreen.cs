@@ -75,8 +75,8 @@ public class HomeScreen : MonoBehaviour
     public void PlayStartGame(mainMenu mainMenu)
     {
         closeHomeScreen();
-        mainMenu.Menu();
         menuScreen.SetActive(true);
+        //mainMenu.Menu();
     }
 
 }

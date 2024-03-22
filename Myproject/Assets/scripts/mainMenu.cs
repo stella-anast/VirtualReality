@@ -19,8 +19,8 @@ public class mainMenu : MonoBehaviour
     [SerializeField] GameObject minimapCanvas;
     void Start()
     {
-        Menu();
-        //menuScreen.SetActive(false);
+        //Menu();
+        menuScreen.SetActive(false);
 
 
     }

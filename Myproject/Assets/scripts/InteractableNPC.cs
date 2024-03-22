@@ -46,6 +46,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
 
         option2Button = DialogSystem.Instance.option2Button;
         option2ButtonText = DialogSystem.Instance.option2Button.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+
     }
 
     public void test()
@@ -55,6 +56,11 @@ public class InteractableNPC : MonoBehaviour, IInteractable
         {
             foreach (Quest quest in quests)
             {
+                if (quest.questName.Equals("The Guard's quest 2"))
+                {
+                    quest.isCompleted = true;
+                }
+
                 Debug.Log("Quest count: " + quests.Count);
 
                 if (quest != null && !string.IsNullOrEmpty(quest.requiredDifficulty.ToString()) && mainMenu.Instance != null && !string.IsNullOrEmpty(mainMenu.Instance.gameDifficulty))

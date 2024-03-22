@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseScreen; // User Interface (UI) elements shown on pause
+    [SerializeField] GameObject homeScreen;
+
     [SerializeField] CinemachineBrain cinemachineBrain; // Controls the camera behaviour of the player
     [SerializeField] KeyCode pauseKey = KeyCode.Escape;
     bool onPause = false;

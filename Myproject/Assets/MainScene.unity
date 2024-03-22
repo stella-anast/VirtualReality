@@ -24940,6 +24940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 922672691}
+  homeScreen: {fileID: 58016449}
   cinemachineBrain: {fileID: 1121915523}
   pauseKey: 27
   minimapCanvas: {fileID: 1053836022}
@@ -52717,7 +52718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000014305115, y: 0.0002350221}
+  m_AnchoredPosition: {x: -0.000014305115, y: -0.000029563904}
   m_SizeDelta: {x: -0.00024414, y: 433}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1443914213
@@ -66914,7 +66915,7 @@ MonoBehaviour:
     requiredDifficulty: 2
   - questName: The Guard's quest 2
     questGiver: Bridge Guard
-    questDescription: Kill the guard castle
+    questDescription: 'Kill the castle guards '
     accepted: 0
     declined: 0
     initialDialogCompleted: 0
