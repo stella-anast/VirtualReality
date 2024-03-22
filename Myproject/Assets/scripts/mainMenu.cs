@@ -19,8 +19,9 @@ public class mainMenu : MonoBehaviour
     [SerializeField] GameObject minimapCanvas;
     void Start()
     {
-        //Instance = this;
         Menu();
+        //menuScreen.SetActive(false);
+
 
     }
 
@@ -71,8 +72,6 @@ public class mainMenu : MonoBehaviour
         minimapCanvas.SetActive(true);
     }
 
-   
-
     public void PlayEasyGame()
     {
         gameDifficulty = "Easy";
@@ -92,15 +91,6 @@ public class mainMenu : MonoBehaviour
         gameDifficulty = "Hard";
         Debug.Log(gameDifficulty);
         closeMenu();
-    }
-
-    private void ReloadScene()
-    {
-        // Get the name of the current scene
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        // Reload the current scene
-        SceneManager.LoadScene(currentSceneName);
-
     }
 
     public void QuitGame()

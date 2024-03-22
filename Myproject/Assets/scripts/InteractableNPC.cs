@@ -46,7 +46,6 @@ public class InteractableNPC : MonoBehaviour, IInteractable
 
         option2Button = DialogSystem.Instance.option2Button;
         option2ButtonText = DialogSystem.Instance.option2Button.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
-        test1 = mainMenu.Instance.gameDifficulty;
     }
 
     public void test()
@@ -113,7 +112,6 @@ public class InteractableNPC : MonoBehaviour, IInteractable
         test();
         LookAtPlayer();
 
-        Debug.Log("gameDifficulty" + test1);
 
         // Interacting with the NPC for the first time
         if (firstTimeInteraction)
@@ -210,22 +208,6 @@ public class InteractableNPC : MonoBehaviour, IInteractable
         option2Button.gameObject.SetActive(false);
     }
 
-    private Quest FindQuestWithDifficulty(string difficulty)
-    {
-        // Iterate through quests to find the one with the desired difficulty
-        foreach (Quest quest in quests)
-        {
-            if (quest.requiredDifficulty.Equals(difficulty))
-            {
-                Debug.Log("requiredDifficulty" + quest.requiredDifficulty);
-
-                return quest;
-            }
-        }
-
-        // If no quest with the desired difficulty is found, return null or handle appropriately
-        return null;
-    }
 
     private void AcceptedQuest()
     {
