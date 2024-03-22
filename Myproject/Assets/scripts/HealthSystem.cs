@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] float maxHealth = 100;
+    [SerializeField] float maxHealth = 10;
     private float currentHealth;
     public Image healthBar;
     Animator animator;
+    Enemy enemy;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        enemy = FindObjectOfType<Enemy>();
     }
 
     public void TakeDamage(float damageAmount)
@@ -26,7 +28,11 @@ public class HealthSystem : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            Die();
+            animator.SetTrigger("Death");
+            if (enemy != null)
+            {
+                enemy.PlayerDied(); 
+            }
         }
     }
 

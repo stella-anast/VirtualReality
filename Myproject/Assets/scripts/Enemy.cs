@@ -5,9 +5,8 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
-
 {
-    [SerializeField] float maxHealth=10f;
+    [SerializeField] float maxHealth = 10f;
     public Slider healthSlider;
     public float currentHealth;
 
@@ -21,22 +20,25 @@ public class Enemy : MonoBehaviour
     Animator animator;
     float timePassed;
     float newDestinationCD = 0.5f;
-    [SerializeField] float healthBarLerpSpeed = 5f;
     private float targetHealthValue;
-    // Start is called before the first frame update
+    bool playerIsAlive = true;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
         currentHealth = maxHealth;
-        targetHealthValue = currentHealth / maxHealth;
+        UpdateHealthBar();
     }
+
     void Update()
     {
+        
+        if (!playerIsAlive)
+            return;
 
-        animator.SetFloat("speed", agent.velocity.magnitude / agent.speed); // Use navMeshAgent
-
+        animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
         if (timePassed >= attackCD)
         {
@@ -55,41 +57,53 @@ public class Enemy : MonoBehaviour
         }
         newDestinationCD -= Time.deltaTime;
         transform.LookAt(player.transform);
-  
     }
 
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
         animator.SetTrigger("damage");
-        
+        UpdateHealthBar();
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
             animator.SetTrigger("death");
-           
+            playerIsAlive = false; // Ensure playerIsAlive is set to false when the enemy dies
         }
-        targetHealthValue = currentHealth / maxHealth;
+       
     }
-    void FixedUpdate()
+
+
+    void UpdateHealthBar()
     {
-        // Smoothly update the health slider value
-        healthSlider.value = Mathf.Lerp(healthSlider.value, targetHealthValue, Time.fixedDeltaTime * healthBarLerpSpeed);
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth / maxHealth;
+        }
+        else
+        {
+            Debug.LogWarning("Health Slider is not assigned to Enemy script.");
+        }
     }
+
     public void StartDealDamage()
     {
+        if (!playerIsAlive)
+            return;
+
         GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
     }
+
     public void EndDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
+
     void DestroyEnemy()
     {
         Destroy(gameObject);
     }
-
 
     private void OnDrawGizmos()
     {
@@ -97,5 +111,10 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, aggroRange);
+    }
+
+    public void PlayerDied()
+    {
+        playerIsAlive = false;
     }
 }
