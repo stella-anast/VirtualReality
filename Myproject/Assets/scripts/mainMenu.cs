@@ -23,6 +23,7 @@ public class mainMenu : MonoBehaviour
 
     [SerializeField] GameObject introScreen;
     [SerializeField] GameObject minimapCanvas;
+    [SerializeField] GameObject healthBar;
     void Start()
     {
         //Menu();
@@ -75,9 +76,9 @@ public class mainMenu : MonoBehaviour
         cinemachineBrain.enabled = !onMenu; //enable camera control with mouse movement
 
         Time.timeScale = timeScaleBeforeMenu;
-
+        healthBar.SetActive(true);
         //introScreen.SetActive(true);
-        
+
     }
 
     public void PlayEasyGame()

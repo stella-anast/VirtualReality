@@ -3,7 +3,7 @@ using UnityEngine;
 public class FireDamageHandler : MonoBehaviour
 {
     public float damageAmount = 10f; // Amount of damage to apply per second
-    public float damageInterval = 0.5f; // Time interval between each damage application (e.g., 0.5 seconds)
+    public float damageInterval = 0.2f; // Time interval between each damage application (e.g., 0.5 seconds)
     private float lastDamageTime; // Time of the last damage application
 
     void Start()
