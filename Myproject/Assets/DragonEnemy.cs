@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class DragonEnemy: MonoBehaviour
-
+public class DragonEnemy : MonoBehaviour
 {
     [SerializeField] float health;
 
-
     [Header("Combat")]
-    [SerializeField] float attackCD = 2f;
+    [SerializeField] float attackCD = 30f;
     [SerializeField] float attackRange = 1f;
     [SerializeField] float aggroRange = 3f;
 
@@ -20,25 +18,22 @@ public class DragonEnemy: MonoBehaviour
     Animator animator;
     float timePassed;
     float newDestinationCD = 0.5f;
-    // Start is called before the first frame update
+    bool isAttacking = false; // Track if the dragon is currently attacking
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-
     }
+
     void Update()
     {
-
-        animator.SetFloat("speed", agent.velocity.magnitude / agent.speed); // Use navMeshAgent
-
-
-        if (timePassed >= attackCD)
+        if (!isAttacking && timePassed >= attackCD)
         {
             if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
             {
-                animator.SetTrigger("attack");
+                StartCoroutine(DelayedAttack());
                 timePassed = 0;
             }
         }
@@ -51,7 +46,19 @@ public class DragonEnemy: MonoBehaviour
         }
         newDestinationCD -= Time.deltaTime;
         transform.LookAt(player.transform);
+    }
 
+    public void AttackAnimationEvent()
+    {
+        StartCoroutine(DelayedAttack());
+    }
+
+    IEnumerator DelayedAttack()
+    {
+        isAttacking = true;
+        yield return new WaitForSeconds(Random.Range(5f, 10f));
+        animator.SetTrigger("attack");
+        isAttacking = false; 
     }
 
     public void TakeDamage(float damageAmount)
@@ -63,6 +70,7 @@ public class DragonEnemy: MonoBehaviour
             animator.SetTrigger("death");
         }
     }
+
     public void startFire()
     {
         if (flamethrowerFire != null)
@@ -70,6 +78,7 @@ public class DragonEnemy: MonoBehaviour
             flamethrowerFire.Play();
         }
     }
+
     public void stopFire()
     {
         if (flamethrowerFire != null)
@@ -77,19 +86,21 @@ public class DragonEnemy: MonoBehaviour
             flamethrowerFire.Stop();
         }
     }
+
     public void StartDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
     }
+
     public void EndDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
+
     void DestroyEnemy()
     {
         Destroy(gameObject);
     }
-
 
     private void OnDrawGizmos()
     {

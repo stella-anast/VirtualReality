@@ -2,24 +2,22 @@ using UnityEngine;
 
 public class FireDamage : MonoBehaviour
 {
-    [SerializeField] float damagePerSecond = 10f;
-    [SerializeField] float maxDamageDistance = 5f; // Maximum distance for taking damage
+    [SerializeField] float damagePerSecond = 3f;
+    ParticleSystem fireParticleSystem;
+
+    void Start()
+    {
+        fireParticleSystem = GetComponent<ParticleSystem>();
+    }
 
     private void OnTriggerStay(Collider other)
     {
-        // Check if the colliding object has a health system
+        // Check if the colliding object has a HealthSystem component and the fire particle system is playing
         HealthSystem healthSystem = other.GetComponent<HealthSystem>();
-        if (healthSystem != null)
+        if (healthSystem != null && fireParticleSystem.isPlaying)
         {
-            // Calculate the distance between the fire source and the colliding object
-            float distance = Vector3.Distance(transform.position, other.transform.position);
-
-            // Check if the colliding object is within the maximum damage distance
-            if (distance <= maxDamageDistance)
-            {
-                // Apply damage over time to the colliding object
-                healthSystem.TakeDamage(damagePerSecond * Time.fixedDeltaTime);
-            }
+            // Apply damage per second to the colliding object
+            healthSystem.Damage(damagePerSecond * Time.deltaTime);
         }
     }
 }

@@ -39,6 +39,25 @@ public class HealthSystem : MonoBehaviour
             
         }
     }
+    public void Damage(float damageAmount)
+    {
+        currentHealth -= damageAmount;
+        
+
+        // Update the health bar's fill amount
+        healthBar.fillAmount = currentHealth / maxHealth;
+
+        if (currentHealth <= 0)
+        {
+            animator.SetTrigger("Death");
+            if (enemy != null)
+            {
+                enemy.PlayerDied();
+            }
+
+
+        }
+    }
 
     void Die()
     {
@@ -70,7 +89,7 @@ public class HealthSystem : MonoBehaviour
         if (inFire)
         {
             float fireDamage = 1f; // Adjust the fire damage amount as needed
-            TakeDamage(fireDamage);
+            Damage(fireDamage);
         }
     }
 }
