@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fa6652f9eaf497ca1a2df8c28307de, type: 3}
+  m_Name: fatherConversationEasy
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - 'My child, the time has come for you to mature. You are now ready to begin your
+    journey to lift the curse. '
+  - We all believe in you! Take care, my daughter!
+  acceptOption: I will succeed, father.
+  acceptAnswer: I'm sure for that my child!
+  declineOption: I don't want to do it.
+  declineAnswer: You must to do it.
+  comebackAfterDecline: I was sure you would come back to do it!
+  comebackInProgress: 
+  comebackCompleted: 
+  finalWords: 
+  coinReward: 0
+  rewardItem1: 
+  rewardItem2: 
+  firstRequirementItem: 
+  firstRequirementAmount: 0
+  secondRequirementItem: 
+  secondRequirementAmount: 0
+  thirdRequirementItem: 
+  thirdRequirementAmount: 0

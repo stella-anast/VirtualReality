@@ -13,19 +13,20 @@ MonoBehaviour:
   m_Name: FirstQuestHard
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
-  - 3rd dialog
-  - 4th dialog
-  - 5th dialog
-  acceptOption: Sure, What do you need?
-  acceptAnswer: I need 6 piles of woods.
+  - If you want me to give you the information you're asking for, you'll first have
+    to do something for me, but it won't be so easy.
+  - You must solve the riddle and bring me what it hides.
+  - 'The riddle is: It is the core of creation, not a built-up formation. And I need
+    6 of these to give you the information.'
+  - Well, will you do it?
+  acceptOption: Sure, II will bring you the 6 piles of wood.
+  acceptAnswer: Wise decision.
   declineOption: Sorry, i can't.
-  declineAnswer: It's okay, it was worth a try.
+  declineAnswer: Then your village will remain condemned...
   comebackAfterDecline: Welcome back! Did you change your mind?
   comebackInProgress: These are not enough, I need 6.
   comebackCompleted: Thank you! Here is your reward.
-  finalWords: Good job!
+  finalWords: Good job! But I also need something else.
   coinReward: 50
   rewardItem1: Coins
   rewardItem2: Coins
