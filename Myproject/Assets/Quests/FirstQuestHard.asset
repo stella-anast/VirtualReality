@@ -16,10 +16,10 @@ MonoBehaviour:
   - If you want me to give you the information you're asking for, you'll first have
     to do something for me, but it won't be so easy.
   - You must solve the riddle and bring me what it hides.
-  - 'The riddle is: It is the core of creation, not a built-up formation. And I need
-    6 of these to give you the information.'
+  - 'The riddle is: It is the silent sentinel of the forest, standing strong with
+    roots deeply immersed. Split it into six, and it transforms into bundles of warmth.'
   - Well, will you do it?
-  acceptOption: Sure, II will bring you the 6 piles of wood.
+  acceptOption: Sure, I will bring you the 6 piles of wood.
   acceptAnswer: Wise decision.
   declineOption: Sorry, i can't.
   declineAnswer: Then your village will remain condemned...

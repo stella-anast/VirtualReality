@@ -13,18 +13,19 @@ MonoBehaviour:
   m_Name: SecondQuestEasy
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
-  - 3rd dialog
-  acceptOption: I can find them for you.
-  acceptAnswer: Oh really? Thank you so much! Bring me 2 knives and 2 piles of wood.
+  - As I said before, I need something else which the next riddle reveals.
+  - Two sharp, two stacked, for slicing and warmth sacked.
+  - Well, will you do it?
+  acceptOption: Okay, I'll bring you 2 knives and 2 piles of wood.
+  acceptAnswer: Good for you.
   declineOption: Unfortunately I can't help you.
-  declineAnswer: It's okay. I'll find another way, I guess...
+  declineAnswer: If you believe you can make it without me, you are free to leave.
   comebackAfterDecline: Did you change your mind?
   comebackInProgress: These are not enough.
-  comebackCompleted: Oh great! Thank you so much. Here is your reward.
-  finalWords: If you are looking for the key of the [bulding's name],  there is a
-    guard on the bridge at the lake, who I think can help you find it.
+  comebackCompleted: Oh great! Thank you. Here is your reward.
+  finalWords: I don't have the key, but I know someone who can help you. As you traverse
+    the sacred site, a bridge you'll find in sight, ere you cross, on it someone
+    you'll meet.
   coinReward: 70
   rewardItem1: Coins
   rewardItem2: Coins
@@ -32,3 +33,5 @@ MonoBehaviour:
   firstRequirementAmount: 2
   secondRequirementItem: Wood
   secondRequirementAmount: 2
+  thirdRequirementItem: 
+  thirdRequirementAmount: 0

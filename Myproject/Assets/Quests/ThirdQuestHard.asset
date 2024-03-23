@@ -13,19 +13,21 @@ MonoBehaviour:
   m_Name: ThirdQuestHard
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
-  - 3rd dialog
-  - 4th dialog
-  acceptOption: Sure, what do you need?
-  acceptAnswer: Thanks! I need 3 wooden sticks, 4 piles of wood and a knife.
-  declineOption: Sorry, I can't
-  declineAnswer: It's okay, if you change your mind you know where you can find me.
+  - As I said, I need some last things.
+  - 'Since you''ve made it this far, I''ll ask without a riddle. '
+  - I need 3 wooden sticks, 4 piles of wood and a knife.
+  - Will you bring them to me?
+  acceptOption: Sure!
+  acceptAnswer: Great! If you succeed, then I will reveal the next element to you.
+  declineOption: Sorry, I can't.
+  declineAnswer: Then I'm sorry for whatever is going to happen in your village...if
+    you change your mind you know where you can find me.
   comebackAfterDecline: Did you change your mind?
   comebackInProgress: These are not enough. I will need more.
   comebackCompleted: These are great! Thank you!
-  finalWords: In The woods there is a cabin. There you will find Steve, an old man
-    who lives there. He can help you find the key.
+  finalWords: I don't have what you searching for but...In the depths of the forest,
+    where shadows dance,there beneath the earth, where secrets sigh and prance. Beyond
+    mortal sight's extending lance, a crucial clue lies, embraced by the shadows.
   coinReward: 45
   rewardItem1: Rock
   rewardItem2: Rock

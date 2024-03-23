@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: ThirdQuestEasy
   m_EditorClassIdentifier: 
   initialDialog:
-  - "1st dialog\t"
-  - 2nd dialog
-  - 3rd dialog
-  - 4th dialog
-  acceptOption: I have the money.
+  - So far, no one has reached this point.
+  - They couldn't solve the witch's puzzles, but you stand out.
+  - You impressed me, but I need something in exchange for what I'll give you. You
+    see... it's valuable...
+  - Do you have any money with you?
+  acceptOption: Yes, I have money.
   acceptAnswer: If you give them to me, I can tell you where you can find the key.
-  declineOption: I don't have the money.
+  declineOption: I don't have money.
   declineAnswer: It's okay. You can come back later.
   comebackAfterDecline: Have you decided?
   comebackInProgress: These are not enough.
-  comebackCompleted: Great! In the woods you will find an old cabin. If you look
-    carefully you will find the key.
+  comebackCompleted: 'Great! '
   finalWords: In the woods you will find an old cabin. If you look carefully you
     will find the key.
   coinReward: 0

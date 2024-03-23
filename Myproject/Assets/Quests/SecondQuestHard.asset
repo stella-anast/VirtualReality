@@ -13,17 +13,19 @@ MonoBehaviour:
   m_Name: SecondQuestHard
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
-  - 3rd dialog
-  acceptOption: I can find them for you.
-  acceptAnswer: Oh really? Thank you so much! Bring me 4 knives and 4 piles of wood.
+  - As I said before, I need something else which the next riddle reveals.
+  - With keenness sharp and edges bright, in forests deep, we stand upright. To slice
+    and chop, our purpose grand, in hands of man, we find our hand. I want 4 of each
+    kind.
+  - Well, will you do it?
+  acceptOption: Sure, I'll bring you 4 knives and 4 piles of wood.
+  acceptAnswer: Good for you.
   declineOption: Unfortunately I can't help you.
-  declineAnswer: It's okay. I'll find another way, I guess...
+  declineAnswer: If you believe you can make it without me, you are free to leave.
   comebackAfterDecline: Did you change your mind?
   comebackInProgress: These are not enough.
-  comebackCompleted: Oh great! Thank you so much. Here is your reward.
-  finalWords: Thank you!
+  comebackCompleted: Oh great! Thank you. Here is your reward.
+  finalWords: You did famously, but I need one last thing.
   coinReward: 50
   rewardItem1: Rock
   rewardItem2: Coins

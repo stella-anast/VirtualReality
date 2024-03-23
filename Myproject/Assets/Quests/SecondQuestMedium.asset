@@ -13,17 +13,19 @@ MonoBehaviour:
   m_Name: SecondQuestMedium
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
-  - 3rd dialog
-  acceptOption: I can find them for you.
-  acceptAnswer: Oh really? Thank you so much! Bring me 3 knives and 4 piles of wood.
+  - As I said before, I need something else which the next riddle reveals.
+  - With two blades and a square frame,in the fire, he is often seen aflame. To slice
+    meat and warm thereafter, in your home, his comfort is laid. I want three of
+    the first and 4 of the second.
+  - Well, will you do it?
+  acceptOption: Sure, I'll bring you 3 knives and 4 piles of wood.
+  acceptAnswer: Good for you.
   declineOption: Unfortunately I can't help you.
-  declineAnswer: It's okay. I'll find another way, I guess...
+  declineAnswer: If you believe you can make it without me, you are free to leave.
   comebackAfterDecline: Did you change your mind?
   comebackInProgress: These are not enough.
-  comebackCompleted: Oh great! Thank you so much. Here is your reward.
-  finalWords: Thank you!
+  comebackCompleted: "Oh great! Thank y\u03BFu. Here is your reward."
+  finalWords: You did famously, but I need one last thing.
   coinReward: 50
   rewardItem1: Rock
   rewardItem2: Coins
@@ -31,3 +33,5 @@ MonoBehaviour:
   firstRequirementAmount: 3
   secondRequirementItem: Wood
   secondRequirementAmount: 4
+  thirdRequirementItem: 
+  thirdRequirementAmount: 0
