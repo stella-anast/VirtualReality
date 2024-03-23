@@ -49,17 +49,17 @@ public class InteractableNPC : MonoBehaviour, IInteractable
 
     }
 
-    public void test()
+    public void SpecificLevelQuests()
     {
         // Check if questsWithRequiredDifficulty is empty
         if (questsWithRequiredDifficulty.Count == 0)
         {
             foreach (Quest quest in quests)
             {
-                if (quest.questName.Equals("The Guard's quest 2"))
+                /*if (quest.questName.Equals("The Guard's quest 2"))
                 {
                     quest.isCompleted = true;
-                }
+                }*/
 
                 Debug.Log("Quest count: " + quests.Count);
 
@@ -115,7 +115,7 @@ public class InteractableNPC : MonoBehaviour, IInteractable
     internal void StartConversation()
     {
         isTalkingWithPlayer = true;
-        test();
+        SpecificLevelQuests();
         LookAtPlayer();
 
 
