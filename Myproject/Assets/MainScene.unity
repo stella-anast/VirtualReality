@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -25005,6 +25005,7 @@ MonoBehaviour:
   cinemachineBrain: {fileID: 1121915523}
   pauseKey: 27
   minimapCanvas: {fileID: 1053836022}
+  healthBar: {fileID: 2065777646}
 --- !u!1 &623118010
 GameObject:
   m_ObjectHideFlags: 0
@@ -52971,7 +52972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000014305115, y: 0.00034798612}
+  m_AnchoredPosition: {x: -0.000014305115, y: -0.000012601859}
   m_SizeDelta: {x: -0.00024414, y: 433}
   m_Pivot: {x: 0, y: 1}
 --- !u!1001 &1443914213
@@ -70648,7 +70649,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1166442969}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9997057
+  m_Size: 0.9998741
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

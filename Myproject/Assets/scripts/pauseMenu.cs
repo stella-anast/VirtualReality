@@ -18,6 +18,7 @@ public class PauseMenu : MonoBehaviour
     CursorLockMode cursorWaslocked;
 
     [SerializeField] GameObject minimapCanvas;
+    [SerializeField] GameObject healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class PauseMenu : MonoBehaviour
         {
             if (!onPause)
             {
+                healthBar.SetActive(false);
                 Pause();
             }
             else
@@ -51,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         minimapCanvas.SetActive(false);
+        healthBar.SetActive(false);
         onPause = true;
 
         // Cursor
@@ -64,7 +67,10 @@ public class PauseMenu : MonoBehaviour
         pauseScreen.SetActive(onPause);
 
         //Hide minimap
-        minimapCanvas.SetActive(false);
+        //minimapCanvas.SetActive(false);
+
+        //Hide health bar
+        healthBar.SetActive(false);
 
         // ------- Disabling any extra behaviours ----------
 
@@ -93,7 +99,10 @@ public class PauseMenu : MonoBehaviour
         pauseScreen.SetActive(onPause);
 
         //Show minimap
-        minimapCanvas.SetActive(true);
+        //minimapCanvas.SetActive(true);
+
+        //Show health bar
+        healthBar.SetActive(true);
 
         // ------- Enabling any extra behaviours ----------
 
