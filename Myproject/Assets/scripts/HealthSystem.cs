@@ -11,7 +11,6 @@ public class HealthSystem : MonoBehaviour
     Animator animator;
     Enemy enemy;
     [SerializeField] GameObject defeatScreen;
-    private bool inFire = false;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -64,32 +63,5 @@ public class HealthSystem : MonoBehaviour
         DefeatScreen.Instance.startDefeatScreen();
         defeatScreen.SetActive(true);
     }
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Fire"))
-        {
-            inFire = true;
-            InvokeRepeating("ApplyFireDamage", 1f, 1f); // Apply fire damage every second
-        }
-    }
-
-    // OnTriggerExit is called when the Collider other has stopped touching the trigger
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Fire"))
-        {
-            inFire = false;
-            CancelInvoke("ApplyFireDamage"); // Stop applying fire damage
-        }
-    }
-
-    // Function to apply fire damage
-    void ApplyFireDamage()
-    {
-        if (inFire)
-        {
-            float fireDamage = 1f; // Adjust the fire damage amount as needed
-            Damage(fireDamage);
-        }
-    }
+   
 }

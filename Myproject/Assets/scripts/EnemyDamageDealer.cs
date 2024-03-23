@@ -14,7 +14,7 @@ public class EnemyDamageDealer : MonoBehaviour
         canDealDamage = false;
         hasDealtDamage = false;
     }
-
+    //if enemy damage dealer comes in contact with player it causes damage
     void Update()
     {
         if (canDealDamage && !hasDealtDamage)

@@ -2791,6 +2791,13 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
+      - time: 0.007894737
+        functionName: AttackAnimationEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       - time: 0.42071748
         functionName: startFire
         data: 
@@ -2800,13 +2807,6 @@ ModelImporter:
         messageOptions: 0
       - time: 0.82146835
         functionName: stopFire
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 1
-        functionName: AttackAnimationEvent
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

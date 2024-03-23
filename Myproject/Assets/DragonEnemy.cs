@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class DragonEnemy : MonoBehaviour
 {
-    [SerializeField] float health;
+    [SerializeField] float maxHealth = 10f;
+    public Slider healthSlider;
+    public float currentHealth;
 
     [Header("Combat")]
     [SerializeField] float attackCD = 30f;
@@ -18,17 +21,23 @@ public class DragonEnemy : MonoBehaviour
     Animator animator;
     float timePassed;
     float newDestinationCD = 0.5f;
-    bool isAttacking = false; // Track if the dragon is currently attacking
+    bool isAttacking = false;
+    bool playerIsAlive = true;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
+        currentHealth = maxHealth;
+        UpdateHealthBar();
     }
 
     void Update()
     {
+        if (!playerIsAlive)
+            return;
+        //check if dragon is attacking & the attack cooldown
         if (!isAttacking && timePassed >= attackCD)
         {
             if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
@@ -48,6 +57,7 @@ public class DragonEnemy : MonoBehaviour
         transform.LookAt(player.transform);
     }
 
+
     public void AttackAnimationEvent()
     {
         StartCoroutine(DelayedAttack());
@@ -56,21 +66,30 @@ public class DragonEnemy : MonoBehaviour
     IEnumerator DelayedAttack()
     {
         isAttacking = true;
-        yield return new WaitForSeconds(Random.Range(5f, 10f));
+        yield return new WaitForSeconds(5f);
         animator.SetTrigger("attack");
         isAttacking = false; 
     }
-
+    //Handle damage 
     public void TakeDamage(float damageAmount)
     {
-        health -= damageAmount;
+        currentHealth -= damageAmount;
+        UpdateHealthBar();
 
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
+            currentHealth = 0;
             animator.SetTrigger("death");
         }
     }
-
+    void UpdateHealthBar()
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.value = currentHealth / maxHealth;
+        }
+    }
+    //Start the fire attack
     public void startFire()
     {
         if (flamethrowerFire != null)
@@ -78,7 +97,7 @@ public class DragonEnemy : MonoBehaviour
             flamethrowerFire.Play();
         }
     }
-
+    //Stop the fire attack
     public void stopFire()
     {
         if (flamethrowerFire != null)
@@ -100,6 +119,10 @@ public class DragonEnemy : MonoBehaviour
     void DestroyEnemy()
     {
         Destroy(gameObject);
+    }
+    public void PlayerDied()
+    {
+        playerIsAlive = false;
     }
 
     private void OnDrawGizmos()

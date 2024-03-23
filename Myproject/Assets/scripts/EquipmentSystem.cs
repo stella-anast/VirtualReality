@@ -6,22 +6,22 @@ public class EquipmentSystem : MonoBehaviour
     [SerializeField] GameObject weapon;
     [SerializeField] GameObject weaponSheath;
 
-    private CombatController combatController; // Reference to the CombatController script
+    private CombatController combatController; 
 
     GameObject currentWeaponInHand;
     GameObject currentWeaponInSheath;
-
+    //to create and destroy weapon from my hand and from hip 
     void Start()
     {
         currentWeaponInSheath = Instantiate(weapon, weaponSheath.transform);
-        combatController = GetComponent<CombatController>(); // Get reference to CombatController script
+        combatController = GetComponent<CombatController>(); 
     }
 
     public void DrawWeapon()
     {
         currentWeaponInHand = Instantiate(weapon, weaponHolder.transform);
         Destroy(currentWeaponInSheath);
-        combatController.OnDrawWeapon(); // Notify CombatController that the weapon is drawn
+        combatController.OnDrawWeapon(); 
     }
 
     public void SheathWeapon()

@@ -13,7 +13,7 @@ public class DamageDealer : MonoBehaviour
         canDealDamage = false;
         hasDealtDamage = new List<GameObject>();
     }
-
+    //if damage dealer gets in contact with enemy or dragon enemy it causes damage
     void Update()
     {
         if (canDealDamage)

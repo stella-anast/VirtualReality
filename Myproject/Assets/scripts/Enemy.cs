@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     float newDestinationCD = 0.5f;
     private float targetHealthValue;
     bool playerIsAlive = true;
+    //Attack player according to distance from enemy and according to Tag
 
     void Start()
     {
@@ -60,7 +61,7 @@ public class Enemy : MonoBehaviour
         newDestinationCD -= Time.deltaTime;
         transform.LookAt(player.transform);
     }
-
+    //calculate damage for player
     public void TakeDamage(float damageAmount)
     {
         currentHealth -= damageAmount;
@@ -71,23 +72,17 @@ public class Enemy : MonoBehaviour
         {
             currentHealth = 0;
             animator.SetTrigger("death");
-            playerIsAlive = false; // Ensure playerIsAlive is set to false when the enemy dies
+            playerIsAlive = false;
             defeatScreen.SetActive(true);
         }
        
     }
-
-
     void UpdateHealthBar()
     {
         if (healthSlider != null)
         {
             healthSlider.value = currentHealth / maxHealth;
-        }
-        else
-        {
-            Debug.LogWarning("Health Slider is not assigned to Enemy script.");
-        }
+        }      
     }
 
     public void StartDealDamage()
