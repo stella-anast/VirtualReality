@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fa6652f9eaf497ca1a2df8c28307de, type: 3}
+  m_Name: FourthQuestHard
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - You may have succeeded so far, but you won't get what you want so easily.
+  - If you possess these materials, you can achieve warmth, but you must also bring
+    something more valuable to benefit.
+  - Will you bring them to me?
+  acceptOption: Sure, I'll bring rocks, wooden sticks and some money.
+  acceptAnswer: 'Great! '
+  declineOption: I don't think so.
+  declineAnswer: You are making a mistake! I am certain you will change your mind.
+  comebackAfterDecline: Ha! I knew it. Are you ready for your quest?
+  comebackInProgress: Keep going! I need more.
+  comebackCompleted: Nice! You found everything.
+  finalWords: With a base of stone and a peak of steel, motionless in peace, yet
+    aids the wheel. We stride across, forging our path, uniting the distance, bridging
+    the chasm vast. At this place, you must give these items, and you will find what
+    you seek.
+  coinReward: 0
+  rewardItem1: Knife
+  rewardItem2: Knife
+  firstRequirementItem: Rock
+  firstRequirementAmount: 2
+  secondRequirementItem: Wooden Stick
+  secondRequirementAmount: 4
+  thirdRequirementItem: Coins
+  thirdRequirementAmount: 2

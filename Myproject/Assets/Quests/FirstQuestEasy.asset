@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fa6652f9eaf497ca1a2df8c28307de, type: 3}
+  m_Name: FirstQuestEasy
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - If you want me to give you the information you're asking for, you'll first have
+    to do something for me, but it won't be so easy.
+  - You must solve the riddle and bring me what it hides.
+  - 'The riddle is: All objects are made from this and i want 4 from these.'
+  - Well, will you do it?
+  acceptOption: Sure, I will bring you the 4 piles of wood.
+  acceptAnswer: Wise decision.
+  declineOption: Sorry, i can't.
+  declineAnswer: Then your village will remain condemned...
+  comebackAfterDecline: Welcome back! Did you change your mind?
+  comebackInProgress: These are not enough, I need 4.
+  comebackCompleted: Thank you! Here is your reward.
+  finalWords: Good job! But I also need something else.
+  coinReward: 50
+  rewardItem1: Coins
+  rewardItem2: Coins
+  firstRequirementItem: Wood
+  firstRequirementAmount: 4
+  secondRequirementItem: 
+  secondRequirementAmount: 0
+  thirdRequirementItem: 
+  thirdRequirementAmount: 0

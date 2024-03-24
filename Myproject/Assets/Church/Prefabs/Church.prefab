@@ -177,6 +177,8 @@ GameObject:
   - component: {fileID: 4106644747801316}
   - component: {fileID: 33750734520604952}
   - component: {fileID: 23943331612232712}
+  - component: {fileID: 7808376698075348566}
+  - component: {fileID: 2008712034144187944}
   m_Layer: 0
   m_Name: Church
   m_TagString: Untagged
@@ -253,6 +255,48 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7808376698075348566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327940276222162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.097, y: 0.04, z: 0.05}
+  m_Center: {x: -0.037, y: -0.01, z: 0.015}
+--- !u!65 &2008712034144187944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327940276222162}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.027, y: 0.017, z: 0.0768591}
+  m_Center: {x: 0, y: 0.018, z: 0.028397031}
 --- !u!1 &1379170111528404
 GameObject:
   m_ObjectHideFlags: 0

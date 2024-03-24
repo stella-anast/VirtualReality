@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fa6652f9eaf497ca1a2df8c28307de, type: 3}
+  m_Name: SecondQuestEasy
+  m_EditorClassIdentifier: 
+  initialDialog:
+  - As I said before, I need something else which the next riddle reveals.
+  - Two sharp, two stacked, for slicing and warmth sacked.
+  - Well, will you do it?
+  acceptOption: Okay, I'll bring you 2 knives and 2 piles of wood.
+  acceptAnswer: Good for you.
+  declineOption: Unfortunately I can't help you.
+  declineAnswer: If you believe you can make it without me, you are free to leave.
+  comebackAfterDecline: Did you change your mind?
+  comebackInProgress: These are not enough.
+  comebackCompleted: Oh great! Thank you. Here is your reward.
+  finalWords: I don't have the key, but I know someone who can help you. As you traverse
+    the sacred site, a bridge you'll find in sight, ere you cross, on it someone
+    you'll meet.
+  coinReward: 70
+  rewardItem1: Coins
+  rewardItem2: Coins
+  firstRequirementItem: Knife
+  firstRequirementAmount: 2
+  secondRequirementItem: Wood
+  secondRequirementAmount: 2
+  thirdRequirementItem: 
+  thirdRequirementAmount: 0
