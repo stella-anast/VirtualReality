@@ -71,6 +71,10 @@ public class InventorySystem : MonoBehaviour
             }
         }
     }
+    public bool HasItem(string itemName)
+    {
+        return itemList.Contains(itemName);
+    }
 
     void Update()
     {
@@ -99,9 +103,8 @@ public class InventorySystem : MonoBehaviour
 
         itemToAdd.transform.SetParent(whatSlotToEquip.transform);
 
-        itemList.Add(itemName);
-
-        QuestManager.Instance.RefreshTrackerList();
+        itemList.Add(itemName);    
+       QuestManager.Instance.RefreshTrackerList();
 
     }
 
