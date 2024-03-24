@@ -79,7 +79,7 @@ public class mainMenu : MonoBehaviour
 
         Time.timeScale = timeScaleBeforeMenu;
         healthBar.SetActive(true);
-        introScreen.SetActive(true);
+        //introScreen.SetActive(true);
 
     }
 
