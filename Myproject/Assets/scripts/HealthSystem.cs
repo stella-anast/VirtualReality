@@ -60,7 +60,7 @@ public class HealthSystem : MonoBehaviour
 
     void Die()
     {
-        DefeatScreen.Instance.startDefeatScreen();
+        WinDefeatScreen.Instance.startScreen();
         defeatScreen.SetActive(true);
     }
    

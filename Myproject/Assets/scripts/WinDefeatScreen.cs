@@ -4,23 +4,25 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DefeatScreen : MonoBehaviour
+public class WinDefeatScreen : MonoBehaviour
 {
-    public static DefeatScreen Instance { get; set; }
+    public static WinDefeatScreen Instance { get; set; }
 
-    [SerializeField] GameObject defeatScreen;
+
+    [SerializeField] GameObject screen;
     [SerializeField] GameObject menuScreen;
     [SerializeField] CinemachineBrain cinemachineBrain;
-    bool onDefeatScreen = false;
-    float timeScaleBeforeDefeatScreen = 1f;
+    bool onScreen = false;
+    float timeScaleBeforeScreen = 1f;
     bool cursorWasVisible;
     CursorLockMode cursorWaslocked;
 
     [SerializeField] GameObject minimapCanvas;
+
     void Start()
     {
-        startDefeatScreen();
-        defeatScreen.SetActive(false);
+        startScreen();
+        screen.SetActive(false);
 
 
     }
@@ -37,9 +39,9 @@ public class DefeatScreen : MonoBehaviour
         }
     }
 
-    public void startDefeatScreen()
+    public void startScreen()
     {
-        onDefeatScreen = true;
+        onScreen = true;
 
         cursorWasVisible = Cursor.visible;
         cursorWaslocked = Cursor.lockState;
@@ -47,34 +49,34 @@ public class DefeatScreen : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
-        defeatScreen.SetActive(onDefeatScreen);
+        screen.SetActive(onScreen);
 
-        cinemachineBrain.enabled = !onDefeatScreen; //disable camera control with mouse movement
+        cinemachineBrain.enabled = !onScreen; //disable camera control with mouse movement
 
-        timeScaleBeforeDefeatScreen = Time.timeScale; //store value
+        timeScaleBeforeScreen = Time.timeScale; //store value
 
         Time.timeScale = 0f;
         minimapCanvas.SetActive(false);
     }
 
-    public void closeDefeatScreen()
+    public void closeScreen()
     {
-        onDefeatScreen = false;
+        onScreen = false;
 
         Cursor.visible = cursorWasVisible;
         Cursor.lockState = cursorWaslocked;
 
-        defeatScreen.SetActive(onDefeatScreen);
+        screen.SetActive(onScreen);
 
-        cinemachineBrain.enabled = !onDefeatScreen; //enable camera control with mouse movement
+        cinemachineBrain.enabled = !onScreen; //enable camera control with mouse movement
 
-        Time.timeScale = timeScaleBeforeDefeatScreen;
+        Time.timeScale = timeScaleBeforeScreen;
         minimapCanvas.SetActive(true);
     }
 
     public void PlayAgain(mainMenu mainMenu)
     {
-        closeDefeatScreen();
+        closeScreen();
         ReloadScene();
     }
     private void ReloadScene()
