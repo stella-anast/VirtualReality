@@ -56,10 +56,6 @@ public class InteractableNPC : MonoBehaviour, IInteractable
         {
             foreach (Quest quest in quests)
             {
-                /*if (quest.questName.Equals("The Guard's quest 2"))
-                {
-                    quest.isCompleted = true;
-                }*/
 
                 Debug.Log("Quest count: " + quests.Count);
 
@@ -396,7 +392,6 @@ public class InteractableNPC : MonoBehaviour, IInteractable
             npcDialogText.text = currentActiveQuest.info.initialDialog[currentDialog];
 
             currentActiveQuest.initialDialogCompleted = true;
-
             SetAcceptAndDeclineOptions();
         }
         else  // If there are more dialogs

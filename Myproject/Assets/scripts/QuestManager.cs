@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
+using System;
 
 public class QuestManager : MonoBehaviour
 {
@@ -63,16 +64,18 @@ public class QuestManager : MonoBehaviour
 
     public void AddActiveQuest(Quest quest)
     {
-
         currentDifficultyLevel = mainMenu.Instance.gameDifficulty;
 
-        Debug.Log("heloo"+ currentDifficultyLevel);
+        string questDifficulty = quest.requiredDifficulty.ToString();
+        string gameDifficulty = mainMenu.Instance.gameDifficulty;
 
-        if (quest.requiredDifficulty.Equals(currentDifficultyLevel))
+        if (questDifficulty.Equals(gameDifficulty, StringComparison.OrdinalIgnoreCase))
         {
             allActiveQuests.Add(quest);
             TrackQuest(quest);
             RefreshQuestList();
+
+            Debug.Log("Added active quest: " + quest.questName);
         }
         else
         {
@@ -80,15 +83,16 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+
     public void MarkQuestCompleted(Quest quest)
     {
         allActiveQuests.Remove(quest);
         allCompletedQuests.Add(quest);
         UnTrackQuest(quest);
 
-
         RefreshQuestList();
 
+        Debug.Log("Marked quest as completed: " + quest.questName);
     }
 
     public void RefreshQuestList()
