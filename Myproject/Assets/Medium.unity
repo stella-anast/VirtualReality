@@ -13756,7 +13756,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1932934973}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99994814
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -19577,8 +19577,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseScreen: {fileID: 922672691}
+  homeScreen: {fileID: 0}
   cinemachineBrain: {fileID: 1121915523}
   pauseKey: 27
+  minimapCanvas: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!1001 &623288759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24945,7 +24948,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bbe0fe51c3664498ffdd737448ec71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  maxHealth: 10
+  healthBar: {fileID: 0}
+  defeatScreen: {fileID: 0}
 --- !u!1001 &813603280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33102,6 +33107,7 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: ef3626258eed84db787b091da4d7a186, type: 2}
+    requiredDifficulty: 0
   currentActiveQuest:
     questName: 
     questGiver: 
@@ -33112,9 +33118,11 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
+    requiredDifficulty: 0
   activeQuestIndex: 0
   firstTimeInteraction: 1
   currentDialog: 0
+  test1: 
 --- !u!65 &1082889554
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40185,6 +40193,7 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 965fa0dc7077f464d99a77cecfb2dabb, type: 2}
+    requiredDifficulty: 0
   - questName: Crafting materials
     questGiver: Melina
     questDescription: I need materials so I can craft some things for my house
@@ -40194,6 +40203,7 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 8c6d6a894840b46d198c1c6f01583ba5, type: 2}
+    requiredDifficulty: 0
   - questName: Collect Wood
     questGiver: Melina
     questDescription: I need materials to sell to my friend. Please help me I need
@@ -40204,6 +40214,7 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: ddcb79a1c96c243a394a9010832bead1, type: 2}
+    requiredDifficulty: 0
   currentActiveQuest:
     questName: 
     questGiver: 
@@ -40214,9 +40225,11 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
+    requiredDifficulty: 0
   activeQuestIndex: 0
   firstTimeInteraction: 1
   currentDialog: 0
+  test1: 
 --- !u!1001 &1307492076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48244,7 +48257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19a40df60a2d9114db9d78dd7499e9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  maxHealth: 10
+  defeatScreen: {fileID: 0}
+  healthSlider: {fileID: 0}
+  currentHealth: 0
   attackCD: 2
   attackRange: 6
   aggroRange: 6
@@ -48737,7 +48753,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c94cba66cdc4506bec64fa0715affe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allItems: {fileID: 0}
 --- !u!1001 &1622223138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56320,6 +56335,7 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 11400000, guid: 9c56732224b8d491f881627b0a893f6d, type: 2}
+    requiredDifficulty: 0
   currentActiveQuest:
     questName: 
     questGiver: 
@@ -56330,9 +56346,11 @@ MonoBehaviour:
     isCompleted: 0
     hasNoRequirements: 0
     info: {fileID: 0}
+    requiredDifficulty: 0
   activeQuestIndex: 0
   firstTimeInteraction: 1
   currentDialog: 0
+  test1: 
 --- !u!1001 &1778203685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58892,7 +58910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000020980835}
+  m_AnchoredPosition: {x: 0, y: 0.000005722046}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1850485393
@@ -61785,7 +61803,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000002861023, y: 0.00004527107}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.000016659498}
   m_SizeDelta: {x: -0.00024414, y: 433}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1932934972
@@ -64047,6 +64065,8 @@ MonoBehaviour:
   questTrackerContent: {fileID: 1932410997}
   trackerRowPrefab: {fileID: 3529040492584034935, guid: 3956c350892444f6f86138c78d8118c1, type: 3}
   allTrackedQuests: []
+  currentDifficultyLevel: 
+  requiredDifficulty: 
 --- !u!4 &2025967420
 Transform:
   m_ObjectHideFlags: 0

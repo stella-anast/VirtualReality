@@ -29,7 +29,6 @@ public class mainMenu : MonoBehaviour
     [SerializeField] GameObject healthBar;
     void Start()
     {
-        //Menu();
         menuScreen.SetActive(false);
 
 

@@ -18,6 +18,8 @@ public class HomeScreen : MonoBehaviour
 
     [SerializeField] GameObject minimapCanvas;
     [SerializeField] GameObject healthBar;
+
+
     void Start()
     {
         startHomeScreen();
@@ -75,10 +77,8 @@ public class HomeScreen : MonoBehaviour
 
     public void PlayStartGame(mainMenu mainMenu)
     {
-        //closeHomeScreen();
         homeScreen.SetActive(false);
         menuScreen.SetActive(true);
-        //mainMenu.Menu();
     }
 
 }
