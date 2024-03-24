@@ -13,11 +13,13 @@ MonoBehaviour:
   m_Name: FourthQuestMedium
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
-  - 3rd dialog
-  acceptOption: I'll find the items you need.
-  acceptAnswer: Great! I want rocks, wooden sticks and some money of course!
+  - You may have succeeded so far, but you won't get what you want so easily. First,
+    you must bring me what the following riddle conceals.
+  - With these materials, you can ignite fire, but I also need something else that
+    lasts longer than these.
+  - Will you bring them to me?
+  acceptOption: Yes, I'll bring rocks, wooden sticks and some money.
+  acceptAnswer: Great!
   declineOption: I don't think so.
   declineAnswer: You are making a mistake! I am certain you will change your mind.
   comebackAfterDecline: Ha! I knew it. Are you ready for your quest?

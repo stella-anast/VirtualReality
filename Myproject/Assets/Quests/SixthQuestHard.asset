@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: SixthQuestHard
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
+  - 'If you want the key, you must first kill the castle guards. '
+  - And once you do, I'll tell you what to do next.
   acceptOption: I am ready.
-  acceptAnswer: You are brave, Iknew I could count on you.
+  acceptAnswer: You are brave, I knew I could count on you.
   declineOption: I am not ready.
   declineAnswer: Not every one is capable of such a quest. If you change your mind
     you can always come back.
   comebackAfterDecline: Are you ready?
   comebackInProgress: Are you having second thoughts? There is no turning back now.
   comebackCompleted: Good job!
-  finalWords: The key is inside the Castle. Be careful! There is a dangerous dragon
-    protecting the chest that contains the key.
+  finalWords: Now you must enter the castle where a mighty dragon guards the chest
+    where the key is kept. Good luck!
   coinReward: 0
   rewardItem1: 
   rewardItem2: 

@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: FifthQuestHard
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
-  - 3rd dialog
-  - 4th dialog
+  - No one has reached this far yet. You've impressed me, but...
+  - As we all know, to gain something, you must give something. And I require 2 knives
+    and plenty of money.
+  - Will you bring them to me?
   acceptOption: I have what you need.
-  acceptAnswer: Great! I want 2 knives and some money.
+  acceptAnswer: Great!
   declineOption: Never mind. I don't need your help.
   declineAnswer: Very well. You will soon regret this.
   comebackAfterDecline: I knew you'd come back.
   comebackInProgress: These are not enough.
   comebackCompleted: 'Great! '
-  finalWords: The next thing I am going to ask is not as easy...
+  finalWords: The next thing I am going to ask is the real challenge...
   coinReward: 0
   rewardItem1: 
   rewardItem2: 

@@ -21,9 +21,9 @@ MonoBehaviour:
   declineOption: I don't want to do it.
   declineAnswer: You must to do it.
   comebackAfterDecline: I was sure you would come back to do it!
-  comebackInProgress: 
-  comebackCompleted: 
-  finalWords: 
+  comebackInProgress: My child our village needs you.
+  comebackCompleted: I was sure you would make it.
+  finalWords: I'm so proud of you!!
   coinReward: 0
   rewardItem1: 
   rewardItem2: 

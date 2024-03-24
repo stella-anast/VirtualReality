@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: SixthQuestMedium
   m_EditorClassIdentifier: 
   initialDialog:
-  - 1st dialog
-  - 2nd dialog
+  - 'If you want the key, you must first kill the castle guards. '
+  - They took something very precious from me, and I want to repay them.
   acceptOption: I am ready.
   acceptAnswer: You are brave, Iknew I could count on you.
   declineOption: I am not ready.
